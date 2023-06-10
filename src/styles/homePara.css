@@ -1,0 +1,233 @@
+/* *,*:before,*:after {box-sizing:inherit;margin:0; padding:0; border:0 none; position: relative;} */
+html {
+	
+	box-sizing:border-box;
+	font-family: 'Vollkorn', sans-serif;
+	font-size: 1rem;
+	color: #efdcdc;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .bg-1 {
+    /* background-image: url('https://thumbs.dreamstime.com/b/authentic-indian-children-uniforms-playground-primary-school-puduchery-india-march-circa-unidentified-teacher-playing-131179634.jpg'); */
+  background-image: url('https://cdn.pixabay.com/photo/2017/09/26/04/28/classroom-2787754_960_720.jpg');
+  position: relative;
+	z-index: -1;
+   width: 100%;
+    height: 100vh;
+    background-position-x: right; 
+  }
+  
+  .bg-2 {
+    /* background-image: url('https://st4.depositphotos.com/6077336/38440/i/450/depositphotos_384408530-stock-photo-puducherry-india-december-circa-2018.jpg'); */
+	background-image: url('https://media.gettyimages.com/id/1339496621/vector/student.jpg?s=612x612&w=0&k=20&c=j3j0pP55PG3J4ytbjXSDwkTMB-X5ZwbdXwLGqCATFH4=');
+	position: relative;
+	z-index: -1;
+	width: 100%;
+    height: 600px;
+    background-position-y: top; /* move image from top to bottom */
+  }
+  
+  .bg-3 {
+   background-image: url('https://media.gettyimages.com/id/647259908/photo/international-school-of-design-rubika-for-industrial-design-supinfocom-rubika-institute-for-3d.jpg?s=612x612&w=0&k=20&c=AtbylT5fnBY5aJBgjy23IaTCYSORPb4xjrrl3XfUhdk=');
+    width: 100%;
+    height: 100vh;
+    background-position-x: right; /* move image from right to left */
+  }
+  
+  .bg-4 {
+   background-image: url('https://media.gettyimages.com/id/821679458/photo/students-sit-inside-a-classroom-of-government-law-college-in-mumbai-on-friday.jpg?s=612x612&w=0&k=20&c=G_9n808ay6xkWfrCyXEG6ittvVnGjQdYjtlX-PL9ZdY=');
+    width: 100%;
+    height: 600px;
+    
+    background-position-y: top; /* move image from top to bottom */
+  }
+  #h1{
+    position: relative;
+    left:6em;
+    top:122px;
+    color:#ff5310;
+  }
+  #h3{
+
+    position: relative;
+    left:15em;
+    top:145px;
+   
+    font-weight: 500;
+    font-size: 1em;
+  }
+  #pg{
+    position: relative;
+    left: 11em;
+    top: 160px;
+    width: 1500px;
+    height: 186px;
+    line-height: 28px;
+   
+    font-weight: 100;
+    font-size: 0.7em;
+  }
+
+#p1{
+    position: relative;
+    left: 18em;
+    top: 0px;
+    width: 1500px;
+    height: 186px;
+    line-height: 28px;
+    
+    font-weight: 100;
+    font-size: 0.7em;
+}
+
+/* @media screen and (min-width: 700px) { */
+	/* body > article {
+		display: flex;
+		flex-wrap: wrap;
+	} */
+	/* figure {
+		background: #eee;
+		width: calc( 50% + 1px);
+		height: 100vh;
+		margin: 0 auto 10vh 0px;
+		position: sticky;
+		top: 0;
+		overflow: hidden;
+		box-shadow: 4px -4px 8px rgba(0,0,0,.4);
+			}
+	figure::after {
+		content: '';
+		position: absolute;
+		top: 5vmin;
+		right: 5vmin;
+		bottom: 5vmin;
+		left: 45%;
+		border: 2px dashed #fff;
+		outline: 1px solid #fff;
+		outline-offset: -5vmin;
+		backdrop-filter: grayscale(1);
+		pointer-events: none;
+			}
+	figure:nth-of-type(2n)::after {
+		right: 45%;
+		left: 5vmin;
+	} */
+	/* section {
+		background: #e5e5e5;
+		width: calc(50% + 1px);
+		height: 100vh;
+		margin: 0 0 10vh auto;
+		position: sticky;
+		top: 0;
+		overflow: hidden;
+		padding: 5vmin;
+		box-shadow: -4px -4px 8px rgba(0,0,0,.4);
+			}
+	figure:nth-of-type(1),
+	section:nth-of-type(1) {
+		margin: 0 0 10vh 0;
+		width: 50%;
+			}
+	figure:nth-of-type(2n) {
+		margin: 0 0 10vh auto;
+		box-shadow: -4px -4px 8px rgba(0,0,0,.4);
+			}
+	section:nth-of-type(2n) {
+		margin: 0 auto 10vh 0;
+		box-shadow: 4px -4px 8px rgba(0,0,0,.4);
+		}
+	figure:last-of-type,
+	section:last-of-type {
+		margin-bottom: 0;
+	}
+	section::before {
+		background: inherit;
+		z-index: 1;
+		content: '';
+		position: absolute;
+		top: 50%;
+		left:0;
+		width: 7vmin;
+		height: 7vmin;
+		transform: translate(calc(-50% + 1px), -50%) rotate(-45deg);
+		clip-path: polygon(-15% -15%, 110% 0%, 0% 110%);
+		box-shadow: -4px -2px 8px rgba(0,0,0,.4);
+		border-radius: 1.5vmin 0 0 0;
+	}
+	section:nth-of-type(2n)::before {
+		left:auto;
+		right: 0;
+		transform: translate(calc(50% - 1px), -50%) rotate(-45deg) scale(-1);
+	}
+	section::after {
+		content: '';
+		position: absolute;
+		top: 5vmin;
+		right: 45%;
+		bottom: 5vmin;
+		left: 5vmin;
+		border: 2px dashed #fff;
+		outline: 1px solid #fff;
+		outline-offset: -5vmin;
+		backdrop-filter: invert(1);
+		pointer-events: none;
+	}
+	section:nth-of-type(2n):after {
+		right: 5vmin;
+		left: 45%;
+	}
+	figure img {
+		min-width: 100%;
+		min-height: 100%;
+        margin-left: -8em;
+		object-fit: cover;
+		object-position: center;
+	}
+	section > div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+		padding: 1rem;
+	}
+	h1,
+	h2 {
+		margin: 15% 0 auto;
+		font-size: calc(5vmin + 3vmax);
+		text-align: center;
+		font-weight: 700;
+		line-height: 1;
+		word-spacing: .5rem;
+	}
+	p {
+		text-align: right;
+		width: 100%;
+		font-family: "Cormorant", serif;
+		font-weight: 400;
+		font-style: italic;
+		font-size: calc(1.5vmin + 1.75vmax);
+		margin-bottom: 5%;
+	}
+	a {
+		color: transparent;
+		-webkit-text-stroke: 2px #212121;
+		text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 2px;
+	}
+	a:hover, a:focus {	
+		-webkit-text-stroke: 1px #999;
+	} */
+/* } */

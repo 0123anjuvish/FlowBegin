@@ -1,0 +1,45 @@
+.education-page {
+    position: relative;
+    top: 110px;
+    max-width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    z-index: -1;
+      }
+  
+  #edu-h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color:#140B5C;
+  }
+  
+  #edu-p {
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+ .registration-button {
+    position: relative;
+    top: 30px;
+    padding: 10px 20px;
+    background-color: #ff5310;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .education-page .registration-button:hover {
+    background-color:  #ff5310;
+  }
+  
+  .education-page .registration-button:focus {
+    outline: none;
+  }
+  
+  .education-page .registration-button:active {
+    background-color:  #ff5310;
+  }
+  

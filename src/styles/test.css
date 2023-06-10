@@ -1,0 +1,111 @@
+.testDiv {
+    font-family: 'Baloo Paaji', cursive;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:-400px;
+    position: relative; /* Added */
+    overflow: hidden; /* Added */
+  }
+  
+  .test-container {
+    width: 400px;
+    height: 350px;
+    position: relative;
+   
+  }
+  
+  .title-h1,
+  .title-h2 {
+    font-size: 75px;
+    text-transform: uppercase;
+    position: relative;
+    
+  }
+  
+  .title-h1 span,
+  .title-h2 span {
+    width: 100%;
+    float: left;
+    color: var(--tertiary-color);
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    transform: translateY(-50px);
+    opacity: 0;
+    animation-name: titleAnimation;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; /* Added */
+    animation-delay: 5s; /* Added */
+  }
+  
+  .title-h1 span:first-child,
+  .title-h2 span:first-child {
+    animation-delay: 5.6s; /* Added */
+    animation-fill-mode: forwards;
+  }
+  
+  .title-h1 span:last-child,
+  .title-h2 span:last-child {
+    color: var(--secondary-color);
+    animation-delay: 5.5s; /* Added */
+  }
+  
+  .title-h2 {
+    top: 0;
+    position: absolute;
+  }
+  
+  .title-h2 span {
+    animation-delay: 9.1s; /* Added */
+    animation-fill-mode: forwards;
+  }
+  
+  .title-h2 span:first-child {
+    animation-delay: 9.2s; /* Added */
+  }
+  
+  .title-h2 span:last-child {
+    color: var(--secondary-color);
+    animation-delay: 9s; /* Added */
+  }
+  
+  .usechrome {
+    font-size: 10px;
+    color: #fff;
+    font-family: helvetica, arial;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+  }
+  
+  @keyframes titleAnimation {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    }
+    20% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    }
+    80% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    }
+    100% {
+      transform: translateY(50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+      clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+    }
+  }
+  
