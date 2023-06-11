@@ -15,6 +15,7 @@ const RegistrationForm = () => {
   });
 
   const handleNextStep = (data) => {
+    console.log("handle next step called")
     setFormData((prevData) => ({
       ...prevData,
       ...data

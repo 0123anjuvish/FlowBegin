@@ -214,14 +214,14 @@ import { Formik, Field, ErrorMessage, FieldArray } from "formik";
 import "../../styles/stuform.css";
 
 const PersonalDetails = ({ onNext }) => {
-  const handleSubmit = (values, { setSubmitting }) => {
+  const handleSubmit = (values) => {
     // Yahan par form submit hone par logic handle kijiye
-    console.log(values);
-
+    console.log(values,"handle submit called ")
     // onNext function ko call karke agle kadam me jaane ke liye form values ko pass kijiye
+    
     onNext({ personalDetails: values });
 
-    setSubmitting(false);
+    // setSubmitting(false);
   };
 
   const validateForm = (values) => {
@@ -248,7 +248,6 @@ const PersonalDetails = ({ onNext }) => {
     <Formik
       initialValues={{ firstName: "", lastName: "", fatherName: "", motherName: "", dateOfBirth: "", courseName: "", dateOfJoining: "", gender: "", phone: "", address: "", hobbies: [] }}
       validate={validateForm}
-      onSubmit={handleSubmit}
     >
       {({ values, isSubmitting }) => (
         <form className="personal-detail-form">
@@ -397,7 +396,7 @@ const PersonalDetails = ({ onNext }) => {
             </div>
           </div>
 
-          <button type="submit" disabled={isSubmitting}>
+          <button type="submit" disabled={isSubmitting} onClick={handleSubmit}>
             Submit
           </button>
         </form>

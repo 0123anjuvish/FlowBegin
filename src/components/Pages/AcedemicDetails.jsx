@@ -13,10 +13,11 @@ const AcedemicDetails = () => {
     graduationYear: ''
   };
 
-  const handleSubmit = (values, { setSubmitting }) => {
+  const handleSubmit = (values) => {
     // Handle form submission logic here
     console.log(values);
-    setSubmitting(false);
+    // setSubmitting(false);
+
   };
 
   const validateForm = values => {
@@ -48,7 +49,7 @@ const AcedemicDetails = () => {
     <Formik
       initialValues={initialValues}
       validate={validateForm}
-      onSubmit={handleSubmit}
+    
     >
       {({ isSubmitting }) => (
         <form className="academic-detail-form">
@@ -76,7 +77,7 @@ const AcedemicDetails = () => {
             <ErrorMessage name="graduationYear" component="div" className="error-message" />
           </div>
 
-          <button type="submit" disabled={isSubmitting}>Submit</button>
+          <button type="submit" disabled={isSubmitting}   onClick={handleSubmit}>Submit</button>
         </form>
       )}
     </Formik>

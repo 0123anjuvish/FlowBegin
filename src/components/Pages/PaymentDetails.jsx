@@ -10,10 +10,10 @@ const PaymentDetails = () => {
         cvv: ''
       };
     
-      const handleSubmit = (values, { setSubmitting }) => {
+      const handleSubmit = (values) => {
         // Handle form submission logic here
         console.log(values);
-        setSubmitting(false);
+        // setSubmitting(false);
       };
     
       const validateForm = values => {
