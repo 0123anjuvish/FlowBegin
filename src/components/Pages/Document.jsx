@@ -1,18 +1,21 @@
-import React from 'react';
-import { Formik, Form, Field, FieldArray,ErrorMessage } from 'formik';
 import '../../styles/stuform.css';
 
-const Document = () => {
+import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
+
+import React from 'react';
+
+const Document = ({ onNext }) => {
     const initialValues = {
         passport: '',
         resume: '',
         transcript: ''
       };
     
-      const handleSubmit = (values, { setSubmitting }) => {
+      const handleSubmit = (values) => {
         // Handle form submission logic here
         console.log(values);
-        setSubmitting(false);
+        onNext({ documents: values });
+        // setSubmitting(false);
       };
     
       const validateForm = values => {
@@ -37,7 +40,6 @@ const Document = () => {
         <Formik
           initialValues={initialValues}
           validate={validateForm}
-          onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
             <form className="upload-documents-form">
@@ -59,7 +61,7 @@ const Document = () => {
                 <ErrorMessage name="transcript" component="div" className="error-message" />
               </div>
     
-              <button type="submit" disabled={isSubmitting}>Submit</button>
+              <button type="submit" disabled={isSubmitting}  onClick={handleSubmit}>Submit</button>
             </form>
           )}
         </Formik>

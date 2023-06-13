@@ -1,8 +1,10 @@
-import React from 'react';
-import { Formik, Form, Field, FieldArray,ErrorMessage } from 'formik';
 import '../../styles/stuform.css';
 
-const AcedemicDetails = () => {
+import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
+
+import React from 'react';
+
+const AcedemicDetails = ({ onNext }) => {
  
   
       
@@ -17,6 +19,8 @@ const AcedemicDetails = () => {
     // Handle form submission logic here
     console.log(values);
     // setSubmitting(false);
+    onNext({ academicDetails: values });
+
 
   };
 

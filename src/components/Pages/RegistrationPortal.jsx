@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
 import '../../styles/Registr.css';
-import PersonalDetails from './PersonalDetails';
+
+import React, { useState } from 'react';
+
 import AcedemicDetails from './AcedemicDetails';
 import Document from './Document';
 import PaymentDetails from './PaymentDetails';
+import PersonalDetails from './PersonalDetails';
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
@@ -22,7 +24,7 @@ const RegistrationForm = () => {
     }));
 
     // Navigate to the next step (Academic Details)
-    setStep(2);
+    setStep(step+1);
   };
 
   const handlePreviousStep = () => {

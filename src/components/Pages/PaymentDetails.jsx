@@ -1,8 +1,10 @@
-import React from 'react';
-import { Formik, Form, Field, FieldArray,ErrorMessage } from 'formik';
 import '../../styles/stuform.css';
 
-const PaymentDetails = () => {
+import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
+
+import React from 'react';
+
+const PaymentDetails = ({ onNext }) => {
     const initialValues = {
         cardNumber: '',
         cardName: '',
@@ -13,6 +15,7 @@ const PaymentDetails = () => {
       const handleSubmit = (values) => {
         // Handle form submission logic here
         console.log(values);
+        onNext({ paymentDetails: values });
         // setSubmitting(false);
       };
     
