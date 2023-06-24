@@ -8,7 +8,7 @@ const AcedemicDetails = ({ onNext }) => {
  
   
       
-      const initialValues = {
+    const initialValues = {
     university: '',
     degree: '',
     major: '',
@@ -23,6 +23,13 @@ const AcedemicDetails = ({ onNext }) => {
 
 
   };
+
+  const handleSubmit2 = async(data)=>{
+    console.log("data",data)
+    // const res = await addStudent(data);
+    // console.log('res',res)
+    // onNext({"personalDetails": res})
+  }
 
   const validateForm = values => {
     const errors = {};

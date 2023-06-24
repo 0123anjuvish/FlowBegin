@@ -4,15 +4,15 @@
 
 // const PersonalDetails = ({ onNext }) => {
 //   const initialValues = {
-//     firstName: "",
-//     lastName: "",
-//     fatherName: "",
-//     motherName: "",
-//     dateOfBirth: "",
-//     courseName: "",
+//     first_name: "",
+//     last_name: "",
+//     father_name: "",
+//     mother_name: "",
+//     dob: "",
+//     course: "",
 //     dateOfJoining: "",
 //     gender: "",
-//     phone: "",
+//     phone_number: "",
 //     address: "",
 //     hobbies: [],
 //   };
@@ -30,18 +30,18 @@
 //   const validateForm = (values) => {
 //     const errors = {};
 
-//     if (!values.firstName) {
-//       errors.firstName = "Required";
+//     if (!values.first_name) {
+//       errors.first_name = "Required";
 //     }
 
-//     if (!values.lastName) {
-//       errors.lastName = "Required";
+//     if (!values.last_name) {
+//       errors.last_name = "Required";
 //     }
 
-//     if (!values.phone) {
-//       errors.phone = "Required";
-//     } else if (!/^[0-9]{10}$/i.test(values.phone)) {
-//       errors.phone = "Invalid phone number";
+//     if (!values.phone_number) {
+//       errors.phone_number = "Required";
+//     } else if (!/^[0-9]{10}$/i.test(values.phone_number)) {
+//       errors.phone_number = "Invalid phone_number number";
 //     }
 
 //     return errors;
@@ -58,50 +58,50 @@
 //           <div className="form-container">
 //             <div className="form-column1">
 //               <div className="form-group">
-//                 <label htmlFor="firstName">First Name:</label>
-//                 <Field type="text" name="firstName" id="firstName" />
+//                 <label htmlFor="first_name">First Name:</label>
+//                 <Field type="text" name="first_name" id="first_name" />
 //                 <ErrorMessage
-//                   name="firstName"
+//                   name="first_name"
 //                   component="div"
 //                   className="error-message"
 //                 />
 //               </div>
 
 //               <div className="form-group">
-//                 <label htmlFor="lastName">Last Name:</label>
-//                 <Field type="text" name="lastName" id="lastName" />
+//                 <label htmlFor="last_name">Last Name:</label>
+//                 <Field type="text" name="last_name" id="last_name" />
 //                 <ErrorMessage
-//                   name="lastName"
+//                   name="last_name"
 //                   component="div"
 //                   className="error-message"
 //                 />
 //               </div>
 
 //               <div className="form-group">
-//                 <label htmlFor="fatherName">Father's Name:</label>
-//                 <Field type="text" name="fatherName" id="fatherName" />
+//                 <label htmlFor="father_name">Father's Name:</label>
+//                 <Field type="text" name="father_name" id="father_name" />
 //                 <ErrorMessage
-//                   name="fatherName"
+//                   name="father_name"
 //                   component="div"
 //                   className="error-message"
 //                 />
 //               </div>
 
 //               <div className="form-group">
-//                 <label htmlFor="motherName">Mother's Name:</label>
-//                 <Field type="text" name="motherName" id="motherName" />
+//                 <label htmlFor="mother_name">Mother's Name:</label>
+//                 <Field type="text" name="mother_name" id="mother_name" />
 //                 <ErrorMessage
-//                   name="motherName"
+//                   name="mother_name"
 //                   component="div"
 //                   className="error-message"
 //                 />
 //               </div>
 
 //               <div className="form-group">
-//                 <label htmlFor="dateOfBirth">Date of Birth:</label>
-//                 <Field type="date" name="dateOfBirth" id="dateOfBirth" />
+//                 <label htmlFor="dob">Date of Birth:</label>
+//                 <Field type="date" name="dob" id="dob" />
 //                 <ErrorMessage
-//                   name="dateOfBirth"
+//                   name="dob"
 //                   component="div"
 //                   className="error-message"
 //                 />
@@ -120,9 +120,9 @@
 //             <div className="form-column2">
 //               <div className="form-group">
 //                 <label>Course Name:</label>
-//                 <Field name="courseName" type="text" />
+//                 <Field name="course" type="text" />
 //                 <ErrorMessage
-//                   name="courseName"
+//                   name="course"
 //                   component="div"
 //                   className="error-message"
 //                 />
@@ -153,10 +153,10 @@
 //               </div>
 
 //               <div className="form-group">
-//                 <label htmlFor="phone">Phone:</label>
-//                 <Field type="text" name="phone" id="phone" />
+//                 <label htmlFor="phone_number">phone_number:</label>
+//                 <Field type="text" name="phone_number" id="phone_number" />
 //                 <ErrorMessage
-//                   name="phone"
+//                   name="phone_number"
 //                   component="div"
 //                   className="error-message"
 //                 />
@@ -209,95 +209,98 @@
 
 // export default PersonalDetails;
 
-import React from "react";
-import { Formik, Field, ErrorMessage, FieldArray } from "formik";
 import "../../styles/stuform.css";
 
+import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
+
+import React from "react";
+import { addStudent } from "../../Apis/student";
+
 const PersonalDetails = ({ onNext }) => {
-  const handleSubmit = (values) => {
-    // Yahan par form submit hone par logic handle kijiye
-    console.log(values,"handle submit called ")
-    // onNext function ko call karke agle kadam me jaane ke liye form values ko pass kijiye
-    
-    onNext({ personalDetails: values });
-
-    // setSubmitting(false);
-  };
-
   const validateForm = (values) => {
     const errors = {};
 
-    if (!values.firstName) {
-      errors.firstName = "Required";
+    if (!values.first_name) {
+      errors.first_name = "Required";
     }
 
-    if (!values.lastName) {
-      errors.lastName = "Required";
+    if (!values.last_name) {
+      errors.last_name = "Required";
     }
 
-    if (!values.phone) {
-      errors.phone = "Required";
-    } else if (!/^[0-9]{10}$/i.test(values.phone)) {
-      errors.phone = "Invalid phone number";
+    if (!values.phone_number) {
+      errors.phone_number = "Required";
+    } else if (!/^[0-9]{10}$/i.test(values.phone_number)) {
+      errors.phone_number = "Invalid phone_number number";
     }
 
     return errors;
   };
+  const handleSubmit = async(data)=>{
+    console.log("data",data)
+    const res = await addStudent(data);
+    console.log('res',res)
+    onNext({"personalDetails": res})
+  }
 
   return (
     <Formik
-      initialValues={{ firstName: "", lastName: "", fatherName: "", motherName: "", dateOfBirth: "", courseName: "", dateOfJoining: "", gender: "", phone: "", address: "", hobbies: [] }}
+      initialValues={{ first_name: "", last_name: "", father_name: "", mother_name: "", dob: "", course: "", dateOfJoining: "", gender: "", phone_number: "", address: "", }}
       validate={validateForm}
+      onSubmit={values => {
+        // same shape as initial values
+        handleSubmit(values)
+      }}
     >
       {({ values, isSubmitting }) => (
-        <form className="personal-detail-form">
+        <Form className="personal-detail-form">
           <div className="form-container">
             <div className="form-column1">
               <div className="form-group">
-                <label htmlFor="firstName">First Name:</label>
-                <Field type="text" name="firstName" id="firstName" />
+                <label htmlFor="first_name">First Name:</label>
+                <Field type="text" name="first_name" id="first_name" />
                 <ErrorMessage
-                  name="firstName"
+                  name="first_name"
                   component="div"
                   className="error-message"
                 />
               </div>
 
               <div className="form-group">
-                 <label htmlFor="lastName">Last Name:</label>
-                 <Field type="text" name="lastName" id="lastName" />
+                 <label htmlFor="last_name">Last Name:</label>
+                 <Field type="text" name="last_name" id="last_name" />
                  <ErrorMessage
-                   name="lastName"
+                   name="last_name"
                    component="div"
                    className="error-message"
                  />
                </div>
 
                <div className="form-group">
-                 <label htmlFor="fatherName">Father's Name:</label>
-                 <Field type="text" name="fatherName" id="fatherName" />
+                 <label htmlFor="father_name">Father's Name:</label>
+                 <Field type="text" name="father_name" id="father_name" />
                  <ErrorMessage
-                   name="fatherName"
+                   name="father_name"
                    component="div"
                    className="error-message"
                  />
                </div>
 
                <div className="form-group">
-                 <label htmlFor="motherName">Mother's Name:</label>
-                 <Field type="text" name="motherName" id="motherName" />
+                 <label htmlFor="mother_name">Mother's Name:</label>
+                 <Field type="text" name="mother_name" id="mother_name" />
                  <ErrorMessage
-                   name="motherName"
+                   name="mother_name"
                    component="div"
                    className="error-message"
                  />
                </div>
 
                <div className="form-group">
-                 <label htmlFor="dateOfBirth">Date of Birth:</label>
-                 <Field type="date" name="dateOfBirth" id="dateOfBirth" />
+                 <label htmlFor="dob">Date of Birth:</label>
+                 <Field type="date" name="dob" id="dob" dateFormat="yyyy-MM-dd"/>
                  <ErrorMessage
-                   name="dateOfBirth"
+                   name="dob"
                    component="div"
                    className="error-message"
                  />
@@ -316,19 +319,9 @@ const PersonalDetails = ({ onNext }) => {
              <div className="form-column2">
                <div className="form-group">
                  <label>Course Name:</label>
-                 <Field name="courseName" type="text" />
+                 <Field name="course" type="text" />
                  <ErrorMessage
-                   name="courseName"
-                   component="div"
-                   className="error-message"
-                 />
-               </div>
-
-               <div className="form-group">
-                 <label>Date of Joining:</label>
-                 <Field name="dateOfJoining" type="date" />
-                 <ErrorMessage
-                   name="dateOfJoining"
+                   name="course"
                    component="div"
                    className="error-message"
                  />
@@ -338,9 +331,9 @@ const PersonalDetails = ({ onNext }) => {
                  <label>Gender:</label>
                  <br />
                  <label>Male:</label>
-                 <Field name="gender" value="male" type="radio" id="radio-m" />
+                 <Field name="gender" value="true" type="radio" id="radio-m" />
                  <label>Female:</label>
-                 <Field name="gender" value="female" type="radio" id="radio-f" />
+                 <Field name="gender" value="false" type="radio" id="radio-f" />
                  <ErrorMessage
                    name="gender"
                    component="div"
@@ -349,16 +342,16 @@ const PersonalDetails = ({ onNext }) => {
                </div>
 
                <div className="form-group">
-                 <label htmlFor="phone">Phone:</label>
-                 <Field type="text" name="phone" id="phone" />
+                 <label htmlFor="phone_number">phone_number:</label>
+                 <Field type="text" name="phone_number" id="phone_number" />
                  <ErrorMessage
-                   name="phone"
+                   name="phone_number"
                    component="div"
                    className="error-message"
                  />
                </div>
 
-               <FieldArray
+               {/* <FieldArray
                  name="hobbies"
                  render={(arrayHelpers) => (
                    <div>
@@ -390,16 +383,16 @@ const PersonalDetails = ({ onNext }) => {
                      )}
                    </div>
                  )}
-               />
+               /> */}
 
              
             </div>
           </div>
 
-          <button type="submit" disabled={isSubmitting} onClick={handleSubmit}>
+          <button type="submit" disabled={isSubmitting}>
             Submit
           </button>
-        </form>
+        </Form>
       )}
     </Formik>
   );

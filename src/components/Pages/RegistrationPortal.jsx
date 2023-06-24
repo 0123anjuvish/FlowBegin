@@ -13,11 +13,13 @@ const RegistrationForm = () => {
     personalDetails: {},
     academicDetails: {},
     documents: {},
-    paymentDetails: {}
+    paymentDetails: {},
+    studentId : ""
   });
 
   const handleNextStep = (data) => {
-    console.log("handle next step called")
+    console.log("handle next step called" , data)
+    console.log(formData,"formdata")
     setFormData((prevData) => ({
       ...prevData,
       ...data
