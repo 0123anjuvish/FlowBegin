@@ -1,8 +1,30 @@
 import React from 'react'
 import '../../styles/footer.css';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import {BsTwitter,BsInstagram,BsYoutube} from "react-icons/bs";
 import { FaFacebookF,FaLinkedinIn } from "react-icons/fa";
 const Footer = () => {
+  const initialValues = {
+    email: '',
+  };
+
+  const handleSubmit = (values, { resetForm }) => {
+    
+    console.log(values.email);
+    resetForm();
+  };
+
+  const validateForm = (values) => {
+    const errors = {};
+
+    if (!values.email) {
+      errors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = 'Invalid email address';
+    }
+
+    return errors;
+  };
   return (
    <>
    <footer>
@@ -49,11 +71,22 @@ const Footer = () => {
           <li><a href="#">Books&Tools</a></li>
           <li><a href="#">Sponser a Student fee for one year</a></li>
         </ul>
-        <ul className="box input-box">
-          <li className="link_name">Subscribe</li>
-          <li><input type="text" placeholder="Enter your email"/></li>
-          <li><input type="button" value="Subscribe"/></li>
-        </ul>
+        <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validate={validateForm}
+    >
+      <Form className="box input-box">
+        <li className="link_name">Subscribe</li>
+        <li>
+          <Field type="text" name="email" placeholder="Enter your email" />
+          <ErrorMessage name="email" component="div" className="error" />
+        </li>
+        <li>
+          <button type="submit" id='subs-btn'>Subscribe</button>
+        </li>
+      </Form>
+    </Formik>
       </div>
     </div>
     <div className="bottom-details">

@@ -5,21 +5,17 @@ const Testimonial = () => {
     <>
       <div className='testDiv'>
       <section className="test-container">
-  {/* <h1 className="title-h1">
-    <span>Hi, nice</span>
-    <span>to see</span>
-    <span>you here</span>
-  </h1> */}
+ 
   
   <h2 className="title-h2">
-    <span>This is</span>
-    <span>a long</span>
-    <span>sub title</span>
+    <span>Serve Better oppurtunity Through our Education&Empowerment</span>
+    {/* <span> Through our </span>
+    <span>Education&Empowerment</span> */}
     
     
   </h2>
 </section>
-<span className="usechrome">Use Chrome for a better experience</span>
+<span className="usechrome">We are Happy to Being with us.</span>
 </div>
     </>
   )

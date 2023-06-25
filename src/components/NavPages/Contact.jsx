@@ -1,12 +1,58 @@
 import React from 'react';
 import '../../styles/contact.css';
-
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { motion } from 'framer-motion';
 const Contact = () => {
+  const initialValues = {
+    name: '',
+    email: '',
+    contactNo: '',
+    message: ''
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required('Name is required'),
+    email: Yup.string().email('Invalid email address').required('Email is required'),
+    contactNo: Yup.string().required('Contact No is required'),
+    message: Yup.string().required('Message is required')
+  });
+
+  const handleSubmit = (values, { setSubmitting }) => {
+   
+    console.log(values);
+    setSubmitting(false);
+  };
+
   return (
     <>
-<div className='cnct-img-div'>
-  <img className='cntct-img' src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60' alt="image"/>
-</div>
+ <div className='cnct-img-div'>
+        <motion.img
+          className='cntct-img'
+          src='https://media.istockphoto.com/id/1346659934/photo/top-view-modern-workspace-with-laptop-computer-and-coffee-cup-on-black-table.jpg?s=612x612&w=0&k=20&c=ILYNXg-gwP_p2HMVQg_oT7AHn1pHCRFGNb597UruGaQ='
+          alt='image'
+          initial={{ opacity: 0, y: -20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 3.5 }} 
+        />
+       <div className="contact-text">
+       <motion.h1
+  style={{ opacity: 0, scale: 0.5 }}
+  animate={{
+    opacity: [0, 1, 0],
+    scale: [0.5, 1, 0.5],
+    transition: { duration: 7, repeat: Infinity, repeatDelay: 2.3 }
+  }}
+  whileHover={{ scale: 1.2 }}
+>
+  We would be happy if all of you join us and support us.
+</motion.h1>
+
+
+
+   </div>
+
+      </div>
 <div className="background">
   <div className="container">
    
@@ -50,24 +96,55 @@ const Contact = () => {
           <div className="app-contact">CONTACT INFO : +91 9278336669</div>
         </div>
         <div className="screen-body-item">
-          <div className="app-form">
-            <div className="app-form-group">
-              <input className="app-form-control" placeholder="NAME" value=""/>
-            </div>
-            <div className="app-form-group">
-              <input className="app-form-control" placeholder="EMAIL"/>
-            </div>
-            <div className="app-form-group">
-              <input className="app-form-control" placeholder="CONTACT NO"/>
-            </div>
-            <div className="app-form-group message">
-              <input className="app-form-control" placeholder="MESSAGE"/>
-            </div>
-            <div className="app-form-group buttons">
-              <button className="app-form-button">CANCEL</button>
-              <button className="app-form-button">SEND</button>
-            </div>
+        <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        <Form className="app-form">
+          <div className="app-form-group">
+            <Field
+              type="text"
+              name="name"
+              className="app-form-control"
+              placeholder="NAME"
+            />
+            <ErrorMessage name="name" component="div" className="error-message" />
           </div>
+          <div className="app-form-group">
+            <Field
+              type="email"
+              name="email"
+              className="app-form-control"
+              placeholder="EMAIL"
+            />
+            <ErrorMessage name="email" component="div" className="error-message" />
+          </div>
+          <div className="app-form-group">
+            <Field
+              type="text"
+              name="contactNo"
+              className="app-form-control"
+              placeholder="CONTACT NO"
+            />
+            <ErrorMessage name="contactNo" component="div" className="error-message" />
+          </div>
+          <div className="app-form-group message">
+            <Field
+              as="textarea"
+              name="message"
+              className="app-form-control"
+              placeholder="MESSAGE"
+            />
+            <ErrorMessage name="message" component="div" className="error-message" />
+          </div>
+          <div className="app-form-group buttons">
+            <button type="button" className="app-form-button">CANCEL</button>
+            <button type="submit" className="app-form-button">SEND</button>
+          </div>
+        </Form>
+      </Formik>
+ 
         </div>
       </div>
     </div>
@@ -87,15 +164,19 @@ const Contact = () => {
     </div>
   </div>
 </div>
-<div className='map-container'>
-        <div className="map-overlay">
-          <div className="map-text">Location</div>
-        </div>
-        <img
-          src='https://maps.googleapis.com/maps/api/staticmap?center=28.6139,77.2090&zoom=14&size=600x400&markers=28.6139,77.2090&key=YOUR_API_KEY'
-          alt='map'
-        />
+<div className="map-container">
+      <div className="map-overlay">
+       
       </div>
+      <iframe
+        title="Google Map"
+        className="map-iframe"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.363872781765!2d77.20900051481107!3d28.613895882411758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d02b4f3f6f0b5%3A0x78b9f9f4778ebc18!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1560016932994!5m2!1sen!2sin"
+        frameBorder="0"
+        style={{ border: 0 }}
+        allowFullScreen
+      ></iframe>
+    </div>
     </>
   )
 }

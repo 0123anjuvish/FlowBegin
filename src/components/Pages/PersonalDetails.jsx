@@ -215,13 +215,13 @@ import "../../styles/stuform.css";
 
 const PersonalDetails = ({ onNext }) => {
   const handleSubmit = (values) => {
-    // Yahan par form submit hone par logic handle kijiye
+    
     console.log(values,"handle submit called ")
-    // onNext function ko call karke agle kadam me jaane ke liye form values ko pass kijiye
+   
     
     onNext({ personalDetails: values });
 
-    // setSubmitting(false);
+   
   };
 
   const validateForm = (values) => {
@@ -246,11 +246,12 @@ const PersonalDetails = ({ onNext }) => {
 
   return (
     <Formik
-      initialValues={{ firstName: "", lastName: "", fatherName: "", motherName: "", dateOfBirth: "", courseName: "", dateOfJoining: "", gender: "", phone: "", address: "", hobbies: [] }}
+      initialValues={{ firstName: "", lastName: "", fatherName: "", motherName: "", dateOfBirth: "",  dateOfJoining: "", gender: "", phone: "", address: "", addCourses: [] }}
       validate={validateForm}
     >
       {({ values, isSubmitting }) => (
         <form className="personal-detail-form">
+          <h4>Personal Detail Field</h4>
           <div className="form-container">
             <div className="form-column1">
               <div className="form-group">
@@ -302,63 +303,13 @@ const PersonalDetails = ({ onNext }) => {
                    className="error-message"
                  />
                </div>
-               <div className="form-group-add">
-                 <label htmlFor="address">Address:</label>
-                 <Field as="textarea" name="address" id="address" rows="3" />
-                 <ErrorMessage
-                   name="address"
-                   component="div"
-                   className="error-message"
-                 />
-               </div>
+              
              </div>
 
              <div className="form-column2">
-               <div className="form-group">
-                 <label>Course Name:</label>
-                 <Field name="courseName" type="text" />
-                 <ErrorMessage
-                   name="courseName"
-                   component="div"
-                   className="error-message"
-                 />
-               </div>
-
-               <div className="form-group">
-                 <label>Date of Joining:</label>
-                 <Field name="dateOfJoining" type="date" />
-                 <ErrorMessage
-                   name="dateOfJoining"
-                   component="div"
-                   className="error-message"
-                 />
-               </div>
-
-               <div className="form-group-gender">
-                 <label>Gender:</label>
-                 <br />
-                 <label>Male:</label>
-                 <Field name="gender" value="male" type="radio" id="radio-m" />
-                 <label>Female:</label>
-                 <Field name="gender" value="female" type="radio" id="radio-f" />
-                 <ErrorMessage
-                   name="gender"
-                   component="div"
-                   className="error-message"
-                 />
-               </div>
-
-               <div className="form-group">
-                 <label htmlFor="phone">Phone:</label>
-                 <Field type="text" name="phone" id="phone" />
-                 <ErrorMessage
-                   name="phone"
-                   component="div"
-                   className="error-message"
-                 />
-               </div>
-
-               <FieldArray
+             <div className="form-group">
+             <label htmlFor="course">Course-Name:</label>
+             <FieldArray
                  name="hobbies"
                  render={(arrayHelpers) => (
                    <div>
@@ -385,19 +336,63 @@ const PersonalDetails = ({ onNext }) => {
                          type="button"
                          onClick={() => arrayHelpers.push("")}
                        >
-                         Add Hobbies
+                         Add Courses
                        </button>
                      )}
                    </div>
                  )}
                />
+</div>
+               <div className="form-group">
+                 <label>Date of Joining:</label>
+                 <Field name="dateOfJoining" type="date" />
+                 <ErrorMessage
+                   name="dateOfJoining"
+                   component="div"
+                   className="error-message"
+                 />
+               </div>
+
+               <div className="form-group-gender">
+                 <label>Gender:</label>
+                 <br />
+                 <label id="lbl-gndr-m " style={{marginTop:"30px",marginLeft:"-55px"}}>Male:</label>
+                 <Field name="gender" value="male" type="radio" id="radio-m" />
+                 <label id="lbl-gndr-f " style={{marginTop:"30px",marginLeft:"35px"}}>Female:</label>
+                 <Field name="gender" value="female" type="radio" id="radio-f" />
+                 <ErrorMessage
+                   name="gender"
+                   component="div"
+                   className="error-message"
+                 />
+               </div>
+
+               <div className="form-group">
+                 <label htmlFor="phone">Phone:</label>
+                 <Field type="text" name="phone" id="phone" />
+                 <ErrorMessage
+                   name="phone"
+                   component="div"
+                   className="error-message"
+                 />
+               </div>
+
+               <div className="form-group-add">
+                 <label htmlFor="address">Address:</label>
+                 <Field as="textarea" name="address" id="address" rows="3" />
+                 <ErrorMessage
+                   name="address"
+                   component="div"
+                   className="error-message"
+                 />
+               </div>
 
              
             </div>
           </div>
 
-          <button type="submit" disabled={isSubmitting} onClick={handleSubmit}>
-            Submit
+          <button type="submit" disabled={isSubmitting} onClick={handleSubmit} id="personal-btn">
+            Save&next
           </button>
         </form>
       )}

@@ -51,31 +51,32 @@ const PaymentDetails = ({ onNext }) => {
         >
           {({ isSubmitting }) => (
             <form className="payment-detail-form">
-              <div className="form-group">
-                <label htmlFor="cardNumber">Card Number</label>
-                <Field type="text" name="cardNumber" id="cardNumber" />
+              <h4 >Make Payment</h4>
+              <div className="form-group3">
+                <label htmlFor="cardNumber" id='pay-lbl'>Card Number:</label>
+                <Field type="number" name="cardNumber" id="cardNumber" />
                 <ErrorMessage name="cardNumber" component="div" className="error-message" />
               </div>
     
-              <div className="form-group">
-                <label htmlFor="cardName">Cardholder Name</label>
+              <div className="form-group3">
+                <label htmlFor="cardName" id='pay-lbl'>Cardholder Name:</label>
                 <Field type="text" name="cardName" id="cardName" />
                 <ErrorMessage name="cardName" component="div" className="error-message" />
               </div>
     
-              <div className="form-group">
-                <label htmlFor="expiryDate">Expiry Date</label>
-                <Field type="text" name="expiryDate" id="expiryDate" />
+              <div className="form-group3">
+                <label htmlFor="expiryDate"id='pay-lbl'>Expiry Date:</label>
+                <Field type="date" name="expiryDate" id="expiryDate" />
                 <ErrorMessage name="expiryDate" component="div" className="error-message" />
               </div>
     
-              <div className="form-group">
-                <label htmlFor="cvv">CVV</label>
-                <Field type="text" name="cvv" id="cvv" />
+              <div className="form-group3">
+                <label htmlFor="cvv"id='pay-lbl'>CVV:</label>
+                <Field type="number" name="cvv" id="cvv" />
                 <ErrorMessage name="cvv" component="div" className="error-message" />
               </div>
     
-              <button type="submit" disabled={isSubmitting}>Submit</button>
+              <button type="submit" disabled={isSubmitting} id='pay-btn'>Submit</button>
             </form>
           )}
         </Formik>

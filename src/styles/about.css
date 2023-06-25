@@ -1,8 +1,17 @@
 .abt-container{
     position: relative;
-    top:80px;
+    top:20px;
+   
     height: 2500px;
     z-index: -1;
+}
+.abt-anm{
+  position: relative;
+  width: 1342px;
+  height: 400px;
+  left:-130px;
+  margin-bottom: 5px;
+  /* background-color: aqua; */
 }
 .wrapper {
     display: flex;
@@ -55,6 +64,15 @@
     color: black;
     text-transform: uppercase;
   }
+  .card-img-div{
+    display: flex;
+    width: 1336px;
+   height: 3800px;
+    position: relative;
+    left: -134px;
+    background-color: #00008B;
+    flex-direction: row;
+  }
 
   #mission-txt {
     font-size: 18px;
@@ -67,7 +85,7 @@
     /* margin-left: 700px; */
   }
 
-  div img {
+  #div-img {
     width: 150px;
     filter: drop-shadow(0 10px 5px black);
   }
@@ -75,11 +93,17 @@
  #abt-para {
     text-align: justify;
     color: black;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: Merriweather;
   }
 
   .faculties {
     display: flex;
     flex-wrap: wrap;
+    width: 1375px;
+    position: relative;
+    left:-13px;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -189,6 +213,25 @@
     line-height: 1.75;
   }
   .abt-img{
-    width:700px;
+   
+    width:400px;
+    height: 300px;
+  }
+  @keyframes textAnimation {
+    from {
+      opacity: 0;
+      transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(500px) translate3d(0, 0, 0);
+    }
+  }
+  
+  .abt-container p {
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    animation: textAnimation 1s ease-out 1 both;
   }
   
