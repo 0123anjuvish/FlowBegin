@@ -15,22 +15,9 @@ const AcedemicDetails = ({ onNext }) => {
     graduationYear: ''
   };
 
-  const handleSubmit = (values) => {
-    // Handle form submission logic here
-    console.log(values);
-    // setSubmitting(false);
-    onNext({ academicDetails: values });
+ 
 
-
-  };
-
-  const handleSubmit2 = async(data)=>{
-    console.log("data",data)
-    // const res = await addStudent(data);
-    // console.log('res',res)
-    // onNext({"personalDetails": res})
-  }
-
+  
   const validateForm = values => {
     const errors = {};
 
@@ -54,6 +41,12 @@ const AcedemicDetails = ({ onNext }) => {
 
     return errors;
   };
+  const handleSubmit = async(data)=>{
+    console.log("data",data)
+    // const res = await addStudent(data);
+    // console.log('res',res)
+    // onNext({AcedemicDetails: res})
+  }
 
   return (
    
@@ -63,7 +56,7 @@ const AcedemicDetails = ({ onNext }) => {
     
     >
       {({ isSubmitting }) => (
-        <form className="academic-detail-form">
+        <Form className="academic-detail-form">
           <div className="form-group">
             <label htmlFor="university">University</label>
             <Field type="text" name="university" id="university" />
@@ -89,7 +82,7 @@ const AcedemicDetails = ({ onNext }) => {
           </div>
 
           <button type="submit" disabled={isSubmitting}   onClick={handleSubmit}>Submit</button>
-        </form>
+        </Form>
       )}
     </Formik>
   );

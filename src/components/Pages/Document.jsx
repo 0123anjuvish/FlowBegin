@@ -11,12 +11,12 @@ const Document = ({ onNext }) => {
         transcript: ''
       };
     
-      const handleSubmit = (values) => {
-        // Handle form submission logic here
-        console.log(values);
-        onNext({ documents: values });
-        // setSubmitting(false);
-      };
+      const handleSubmit = async(data)=>{
+        console.log("data",data)
+        // const res = await addStudent(data);
+        // console.log('res',res)
+        // onNext({AcedemicDetails: res})
+      }
     
       const validateForm = values => {
         const errors = {};
@@ -42,7 +42,7 @@ const Document = ({ onNext }) => {
           validate={validateForm}
         >
           {({ isSubmitting }) => (
-            <form className="upload-documents-form">
+            <Form className="upload-documents-form">
               <div className="form-group">
                 <label htmlFor="passport">Passport</label>
                 <Field type="file" name="passport" id="passport" />
@@ -62,7 +62,7 @@ const Document = ({ onNext }) => {
               </div>
     
               <button type="submit" disabled={isSubmitting}  onClick={handleSubmit}>Submit</button>
-            </form>
+            </Form>
           )}
         </Formik>
       );
