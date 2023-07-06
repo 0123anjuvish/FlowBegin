@@ -53,25 +53,25 @@ const PaymentDetails = ({ onNext }) => {
             <form className="payment-detail-form">
               <h4 >Make Payment</h4>
               <div className="form-group3">
-                <label htmlFor="cardNumber" id='pay-lbl'>Card Number:</label>
+                <label htmlFor="cardNumber" className='pay-lbl'>Card Number:</label>
                 <Field type="number" name="cardNumber" id="cardNumber" />
                 <ErrorMessage name="cardNumber" component="div" className="error-message" />
               </div>
     
               <div className="form-group3">
-                <label htmlFor="cardName" id='pay-lbl'>Cardholder Name:</label>
+                <label htmlFor="cardName" className='pay-lbl'>Cardholder Name:</label>
                 <Field type="text" name="cardName" id="cardName" />
                 <ErrorMessage name="cardName" component="div" className="error-message" />
               </div>
     
               <div className="form-group3">
-                <label htmlFor="expiryDate"id='pay-lbl'>Expiry Date:</label>
+                <label htmlFor="expiryDate"className='pay-lbl'>Expiry Date:</label>
                 <Field type="date" name="expiryDate" id="expiryDate" />
                 <ErrorMessage name="expiryDate" component="div" className="error-message" />
               </div>
     
               <div className="form-group3">
-                <label htmlFor="cvv"id='pay-lbl'>CVV:</label>
+                <label htmlFor="cvv"className='pay-lbl'>CVV:</label>
                 <Field type="number" name="cvv" id="cvv" />
                 <ErrorMessage name="cvv" component="div" className="error-message" />
               </div>

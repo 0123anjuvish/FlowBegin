@@ -7,16 +7,7 @@ height: 700px;
 background: #fcfafa;
 color: black;
 }
-/* .rect{
-    position: absolute;
-width: 432.15px;
-height: 657.17px;
-left: -45.32px;
-top: 398.43px;
-background: linear-gradient(180deg,#ff5310 19.73%, rgba(73, 81, 244, 0.97) 89.48%);
-border-radius: 160px;
-transform: rotate(-130.5deg);
-} */
+
 #h4{
     position: absolute;
 width: 790px;

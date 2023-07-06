@@ -1,9 +1,9 @@
 .abt-container{
     position: relative;
     top:20px;
-   
-    height: 2500px;
-    z-index: -1;
+   /* background: url(<path-to-image>), lightgray 0% 0% / 100px 100px repeat;; */
+    height: 2480px;
+    /* z-index: -1; */
 }
 .abt-anm{
   position: relative;
@@ -64,16 +64,7 @@
     color: black;
     text-transform: uppercase;
   }
-  .card-img-div{
-    display: flex;
-    width: 1336px;
-   height: 3800px;
-    position: relative;
-    left: -134px;
-    background-color: #00008B;
-    flex-direction: row;
-  }
-
+  
   #mission-txt {
     font-size: 18px;
     font-weight: 500 !important;
@@ -82,7 +73,7 @@
     display: flex;
    justify-content: center;
    text-align: center;
-    /* margin-left: 700px; */
+   
   }
 
   #div-img {
@@ -90,7 +81,7 @@
     filter: drop-shadow(0 10px 5px black);
   }
 
- #abt-para {
+ .abt-para {
     text-align: justify;
     color: black;
     font-size: 20px;
@@ -146,10 +137,10 @@
     min-height: 60vh;
     /* background: #00008B; */
     color: rgba(255, 255, 255, 0.7);
-    vertical-align: middle;
+   
     text-align: left;
     position: relative;
-    padding: 150px 10% 50px 10%;
+    padding: 70px 10% 50px 10%;
   }
   
   .about_us > h2{
@@ -229,7 +220,7 @@
   }
   
   .abt-container p {
-    font-size: 30px;
+    font-size: 20px;
     display: block;
     text-align: center;
     animation: textAnimation 1s ease-out 1 both;

@@ -29,7 +29,7 @@ const Contact = () => {
  <div className='cnct-img-div'>
         <motion.img
           className='cntct-img'
-          src='https://media.istockphoto.com/id/1346659934/photo/top-view-modern-workspace-with-laptop-computer-and-coffee-cup-on-black-table.jpg?s=612x612&w=0&k=20&c=ILYNXg-gwP_p2HMVQg_oT7AHn1pHCRFGNb597UruGaQ='
+         
           alt='image'
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }} 

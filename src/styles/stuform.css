@@ -14,6 +14,7 @@
   h4{
     position: relative;
     display: flex;
+    color: white;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -218,14 +219,16 @@
   }
   /****Payment Details Page***********/
   .payment-detail-form{
-    margin: 40px auto; 
+    margin: 0px 0 225px 100px;
+    top: 10em;
+    bottom: 40em;
     position: relative;
-    left: 25px;
-    display:grid;
+    left: 230px;
+    display: grid;
     justify-content: center;
     align-items: center;
     max-width: 600px;
-    height: 500px;
+    height: 556px;
     padding: 30px;
     background-color: #00008B;
     border-radius: 5px;
@@ -233,9 +236,10 @@
    .form-group3{
     margin-bottom: 20px;
   }
-  #pay-lbl{
+  .pay-lbl{
     position: relative;
     left:-55px;
+    color: white;
   }
   #cardNumber{
     position: relative;

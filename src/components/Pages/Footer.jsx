@@ -45,31 +45,31 @@ const Footer = () => {
       <div className="link-boxes">
         <ul className="box">
           <li className="link_name">Company</li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Get started</a></li>
+          <li style={{color:"white"}}>Home</li>
+          <li style={{color:"white"}}>Contact us</li>
+          <li style={{color:"white"}}>About us</li>
+          <li style={{color:"white"}}>Get started</li>
         </ul>
         <ul className="box">
           <li className="link_name">Services</li>
-          <li><a href="#">Basic Education</a></li>
-          <li><a href="#">Computer Education</a></li>
-          <li><a href="#">Technical</a></li>
+          <li style={{color:"white"}}>Basic Education</li>
+          <li style={{color:"white"}}>Computer Education</li>
+          <li style={{color:"white"}}>Technical</li>
          
         </ul>
         <ul className="box">
           <li className="link_name">Our Work</li>
-          <li><a href="#">Our Reach</a></li>
-          <li><a href="#">Our Role</a></li>
-          <li><a href="#">Prefrences</a></li>
-          <li><a href="#">Awards</a></li>
+          <li style={{color:"white"}}>Our Reach</li>
+          <li style={{color:"white"}}>Our Role</li>
+          <li style={{color:"white"}}>Prefrences</li>
+          <li style={{color:"white"}}>Awards</li>
         </ul>
         <ul className="box">
           <li className="link_name">Donate</li>
-          <li><a href="#">Online Donation</a></li>
-          <li><a href="#">Give Equipments</a></li>
-          <li><a href="#">Books&Tools</a></li>
-          <li><a href="#">Sponser a Student fee for one year</a></li>
+          <li style={{color:"white"}}>Online Donation</li>
+          <li style={{color:"white"}}>Give Equipments</li>
+          <li style={{color:"white"}}>Books&Tools</li>
+          <li style={{color:"white"}}>Sponser a Student fee for one year</li>
         </ul>
         <Formik
       initialValues={initialValues}
