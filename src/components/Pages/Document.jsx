@@ -1,67 +1,68 @@
 import '../../styles/stuform.css';
 
 import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
+import React, { useState } from 'react';
 
-import React from 'react';
+import { addDocument } from '../../Apis/student';
 
-const Document = ({ onNext }) => {
-    const initialValues = {
-        passport: '',
-        resume: '',
-        transcript: ''
-      };
+const Document = ({ onNext,studentId }) => {
+    const [initialValues, setInitialValue] = useState({
+      passport: '',
+      adhar: '',
+      resume: ''
+    });
     
-      const handleSubmit = async(data)=>{
-        console.log("data",data)
-        // const res = await addStudent(data);
-        // console.log('res',res)
-        // onNext({AcedemicDetails: res})
+    const [passport, setPassport ]= useState("")
+    const [adhar, setAdhar ]= useState("")
+    const [resume, setResume ]= useState("")
+
+    const formData = new FormData();
+
+      const handleFileChange = (event, setFieldValue, filename) => {
+        setFieldValue(event.currentTarget.files[0] )
+        console.log(event.currentTarget.files[0] )
+        setInitialValue({filename:event.currentTarget.files[0]})
+      };
+        
+      const handleSubmit = async()=>{
+        const formData = new FormData();
+        console.log("this is student id : " , studentId)
+        formData.append('passport', passport);
+        formData.append('resume', resume);
+        formData.append('adhar', adhar);
+        formData.append('student', parseInt(studentId));
+        if (studentId)
+       { const res = await addDocument(formData);
+        console.log("res",res)
+        {onNext({documents: res})} 
+
       }
-    
-      const validateForm = values => {
-        const errors = {};
-    
-        if (!values.passport) {
-          errors.passport = 'Required';
-        }
-    
-        if (!values.resume) {
-          errors.resume = 'Required';
-        }
-    
-        if (!values.transcript) {
-          errors.transcript = 'Required';
-        }
-    
-        return errors;
-      };
+      }
     
       return (
         <Formik
           initialValues={initialValues}
-          validate={validateForm}
+          onSubmit={handleSubmit}
         >
-          {({ isSubmitting }) => (
-            <Form className="upload-documents-form">
+          {({isSubmitting }) => (
+            <Form className="upload-documents-form" enctype="multipart/form-data">
               <div className="form-group">
                 <label htmlFor="passport">Passport</label>
-                <Field type="file" name="passport" id="passport" />
+                <Field type="file" name="passport" id="passport"  onChange={(event) => handleFileChange(event, setPassport,"passport")}/>
                 <ErrorMessage name="passport" component="div" className="error-message" />
               </div>
-    
               <div className="form-group">
                 <label htmlFor="resume">Resume</label>
-                <Field type="file" name="resume" id="resume" />
+                <Field type="file" name="resume" id="resume"  onChange={(event) => handleFileChange(event, setResume, "resume")}/>
                 <ErrorMessage name="resume" component="div" className="error-message" />
               </div>
-    
               <div className="form-group">
-                <label htmlFor="transcript">Transcript</label>
-                <Field type="file" name="transcript" id="transcript" />
-                <ErrorMessage name="transcript" component="div" className="error-message" />
+                <label htmlFor="transcript">adhar</label>
+                <Field type="file" name="adhar" id="adhar"  onChange={(event) => handleFileChange(event, setAdhar, "adhar")}/>
+                <ErrorMessage name="adhar" component="div" className="error-message" />
               </div>
     
-              <button type="submit" disabled={isSubmitting}  onClick={handleSubmit}>Submit</button>
+              <button type="submit" disabled={isSubmitting} >Submit</button>
             </Form>
           )}
         </Formik>

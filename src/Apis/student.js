@@ -20,18 +20,17 @@ const addAcademic = async (userdata) => {
                       "Content-Type": "application/json",
                      },
             method: "POST",
-            body: userdata,
+            body: JSON.stringify(userdata),
 });
 
     return handleError(res);
 }
 
 const addDocument = async (userdata) => {
-
     const res = await fetch(`${base.url}student/document/`,   { 
-             headers: {
-                      "Content-Type": "multipart/form-data",
-                     },
+            //  headers: {
+            //           "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundaryabcdefg",
+            //          },
             method: "POST",
             body: userdata,
 });

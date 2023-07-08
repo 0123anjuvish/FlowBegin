@@ -240,7 +240,7 @@ const PersonalDetails = ({ onNext }) => {
     console.log("data",data)
     const res = await addStudent(data);
     console.log('res',res)
-    onNext({"personalDetails": res})
+    onNext({personalDetails: res})
   }
 
   return (
@@ -298,7 +298,7 @@ const PersonalDetails = ({ onNext }) => {
 
                <div className="form-group">
                  <label htmlFor="dob">Date of Birth:</label>
-                 <Field type="date" name="dob" id="dob" dateFormat="yyyy-MM-dd"/>
+                 <Field type="date" name="dob" id="dob"  inputProps={{ format: 'yyyy-MM-dd' }}/>
                  <ErrorMessage
                    name="dob"
                    component="div"

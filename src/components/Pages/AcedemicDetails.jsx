@@ -3,11 +3,11 @@ import '../../styles/stuform.css';
 import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
 
 import React from 'react';
+import { addAcademic } from '../../Apis/student';
 
-const AcedemicDetails = ({ onNext }) => {
+const AcedemicDetails = ({ onNext, studentId }) => {
  
   
-      
     const initialValues = {
     university: '',
     degree: '',
@@ -33,19 +33,17 @@ const AcedemicDetails = ({ onNext }) => {
       errors.major = 'Required';
     }
 
-    if (!values.graduationYear) {
-      errors.graduationYear = 'Required';
-    } else if (!/^[0-9]{4}$/i.test(values.graduationYear)) {
-      errors.graduationYear = 'Invalid graduation year';
-    }
 
     return errors;
   };
   const handleSubmit = async(data)=>{
     console.log("data",data)
-    // const res = await addStudent(data);
-    // console.log('res',res)
-    // onNext({AcedemicDetails: res})
+    data.student = studentId
+    if (studentId)
+   { const res = await addAcademic(data);
+    console.log('res',res)
+    onNext({academicDetails: res})
+  }
   }
 
   return (
@@ -53,9 +51,13 @@ const AcedemicDetails = ({ onNext }) => {
     <Formik
       initialValues={initialValues}
       validate={validateForm}
+      onSubmit={values => {
+        // same shape as initial values
+        handleSubmit(values)
+      }}
     
     >
-      {({ isSubmitting }) => (
+      {({values, isSubmitting }) => (
         <Form className="academic-detail-form">
           <div className="form-group">
             <label htmlFor="university">University</label>
@@ -77,11 +79,15 @@ const AcedemicDetails = ({ onNext }) => {
 
           <div className="form-group">
             <label htmlFor="graduationYear">Graduation Year</label>
-            <Field type="text" name="graduationYear" id="graduationYear" />
-            <ErrorMessage name="graduationYear" component="div" className="error-message" />
+            <Field type="date" name="graduationYear" id="graduationYear" dateFormat="yyyy-MM-dd"/>
+                 <ErrorMessage
+                   name="graduationYear"
+                   component="div"
+                   className="error-message"
+                 />
           </div>
 
-          <button type="submit" disabled={isSubmitting}   onClick={handleSubmit}>Submit</button>
+          <button type="submit" disabled={isSubmitting}>Submit</button>
         </Form>
       )}
     </Formik>
