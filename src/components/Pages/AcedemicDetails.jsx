@@ -3,97 +3,89 @@ import '../../styles/stuform.css';
 import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
 
 import React from 'react';
+import { addAcademic } from '../../Apis/student';
 
-const AcedemicDetails = ({ onNext }) => {
+const AcedemicDetails = ({ onNext, studentId }) => {
  
   
-      
-      const initialValues = {
-   currentclass: '',
-    pastclass: '',
-    schoolname: '',
-    PassingYear: '',
-    Percetage: ''
+    const initialValues = {
+    university: '',
+    degree: '',
+    major: '',
+    graduationYear: ''
   };
-
-  const handleSubmit = (values) => {
-   
-    console.log(values);
-    
-    onNext({ academicDetails: values });
-
-
-  };
-
+  
   const validateForm = values => {
     const errors = {};
 
-    if (!values.currentclass) {
-      errors.currentclass = 'Required';
+    if (!values.university) {
+      errors.university = 'Required';
     }
 
-    if (!values.pastclass) {
-      errors.pastclass = 'Required';
+    if (!values.degree) {
+      errors.degree = 'Required';
     }
 
-    if (!values.schoolname) {
-      errors.schoolname = 'Required';
+    if (!values.major) {
+      errors.major = 'Required';
     }
 
-    if (!values.PassingYear) {
-      errors.PassingYear = 'Required';
-    } else if (!/^[0-9]{4}$/i.test(values.PassingYear)) {
-      errors.PassingYear = 'Invalid passing year';
-    }
-    if (!values.Percetage) {
-      errors.Percetage = 'Required';
-    }
 
     return errors;
   };
+  const handleSubmit = async(data)=>{
+    console.log("data",data)
+    data.student = studentId
+    if (studentId)
+   { const res = await addAcademic(data);
+    console.log('res',res)
+    onNext({academicDetails: res})
+  }
+  }
 
   return (
    
     <Formik
       initialValues={initialValues}
       validate={validateForm}
+      onSubmit={values => {
+        // same shape as initial values
+        handleSubmit(values)
+      }}
     
     >
-      {({ isSubmitting }) => (
-        <form className="academic-detail-form">
-          <h4>Academic Field</h4>
-          <div className="form-group1">
-            <label htmlFor="CurrentClass">CurrentClass:</label>
-            <Field type="text" name="CurrentClass" id="CurrentClass" />
-            <ErrorMessage name="CurrentClass" component="div" className="error-message" />
+      {({values, isSubmitting }) => (
+        <Form className="academic-detail-form">
+          <div className="form-group">
+            <label htmlFor="university">University</label>
+            <Field type="text" name="university" id="university" />
+            <ErrorMessage name="university" component="div" className="error-message" />
           </div>
 
-          <div className="form-group1">
-            <label htmlFor="PastClass">PastClass:</label>
-            <Field type="text" name="PastClass" id="PastClass" />
-            <ErrorMessage name="PastClass" component="div" className="error-message" />
+          <div className="form-group">
+            <label htmlFor="degree">Degree</label>
+            <Field type="text" name="degree" id="degree" />
+            <ErrorMessage name="degree" component="div" className="error-message" />
           </div>
 
-          <div className="form-group1">
-            <label htmlFor="SchoolName">SchoolName:</label>
-            <Field type="text" name="SchoolName" id="SchoolName" />
-            <ErrorMessage name="SchoolName" component="div" className="error-message" />
+          <div className="form-group">
+            <label htmlFor="major">Major</label>
+            <Field type="text" name="major" id="major" />
+            <ErrorMessage name="major" component="div" className="error-message" />
           </div>
 
-          <div className="form-group1">
-            <label htmlFor="PassingYear">Passing Year:</label>
-            <Field type="date" name="PassingYear" id="PassingYear" />
-            <ErrorMessage name="PassingYear" component="div" className="error-message" />
+          <div className="form-group">
+            <label htmlFor="graduationYear">Graduation Year</label>
+            <Field type="date" name="graduationYear" id="graduationYear" dateFormat="yyyy-MM-dd"/>
+                 <ErrorMessage
+                   name="graduationYear"
+                   component="div"
+                   className="error-message"
+                 />
           </div>
 
-          <div className="form-group1">
-            <label htmlFor="percentage">Percentage:</label>
-            <Field type="text" name="percentage" id="percentage" />
-            <ErrorMessage name="percentage" component="div" className="error-message" />
-          </div>
-
-          <button type="submit" disabled={isSubmitting}   onClick={handleSubmit} id='ace-btn'>Save&next</button>
-        </form>
+          <button type="submit" disabled={isSubmitting}>Submit</button>
+        </Form>
       )}
     </Formik>
   );

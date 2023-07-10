@@ -12,12 +12,10 @@ const PaymentDetails = ({ onNext }) => {
         cvv: ''
       };
     
-      const handleSubmit = (values) => {
-        // Handle form submission logic here
-        console.log(values);
-        onNext({ paymentDetails: values });
-        // setSubmitting(false);
-      };
+      const handleSubmit = async(data)=>{
+        console.log("data",data)
+       
+      }
     
       const validateForm = values => {
         const errors = {};
@@ -50,11 +48,10 @@ const PaymentDetails = ({ onNext }) => {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
-            <form className="payment-detail-form">
-              <h4 >Make Payment</h4>
-              <div className="form-group3">
-                <label htmlFor="cardNumber" className='pay-lbl'>Card Number:</label>
-                <Field type="number" name="cardNumber" id="cardNumber" />
+            <Form className="payment-detail-form">
+              <div className="form-group">
+                <label htmlFor="cardNumber">Card Number</label>
+                <Field type="text" name="cardNumber" id="cardNumber" />
                 <ErrorMessage name="cardNumber" component="div" className="error-message" />
               </div>
     
@@ -76,8 +73,8 @@ const PaymentDetails = ({ onNext }) => {
                 <ErrorMessage name="cvv" component="div" className="error-message" />
               </div>
     
-              <button type="submit" disabled={isSubmitting} id='pay-btn'>Submit</button>
-            </form>
+              <button type="submit" disabled={isSubmitting}>Submit</button>
+            </Form>
           )}
         </Formik>
       );
