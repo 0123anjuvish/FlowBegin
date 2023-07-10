@@ -1,12 +1,13 @@
-.education-page {
+.education-container {
     position: relative;
-    top: 110px;
-    max-width: 800px;
-    height: 500px;
-    margin: 0 auto;
+     top:6em;
+     max-width: 1430px;
+     height: 2800px;
+    /* margin: 0 auto; */
+    margin-bottom: -16em;
     padding: 20px;
     text-align: center;
-    z-index: -1;
+   
       }
   
   #edu-h1 {
@@ -43,3 +44,178 @@
     background-color:  #ff5310;
   }
   
+  /****education component******/
+
+  .education-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .education-ban-container{
+    position: relative;
+    top: -5em;
+    /* background-color: red;; */
+    width: 103%;
+    height:500px;
+    background-image: url(https://lifeline.webinane.com/wp-content/uploads/2020/11/sdasss-2.png);
+    background-position: -175px 0px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px 0px 0px 0px;
+  }
+  .edu-section-we{
+    width:100%;
+    height:auto;
+    position: relative;
+    top: 2em;
+  }
+  
+  .education-image img {
+    width: 1349px;
+    height: auto;
+  }
+  
+  .education-content {
+    position: relative;
+   top:-700px;
+    text-align: center;
+  }
+  
+  .education-heading {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .education-description {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .education-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+    margin-bottom: -10px;
+    top:-20em;
+  }
+ .card-purpose h2{
+    font-family: "Quicksand", Sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    position: relative;
+    top: -344px;
+    color: #222222;
+    transition: all .45s linear;
+}
+  
+  .education-card {
+    background-color: #f9f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .education-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .card-description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Animation Effects */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .education-heading,
+  .education-description,
+  .education-card {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .education-heading {
+    position: relative;
+   
+    top:1em;
+    text-align: center;
+   color: #a4edf3;
+    font-family: 'Caladea', sans-serif;
+    font-weight: 600;
+    font-size: 34px;
+    padding-top: 40vh;
+    height: 100vh;
+    /* overflow: hidden; */
+  }
+  
+  .education-heading div {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: showup 7s infinite;
+  }
+  
+  .education-heading div:last-of-type {
+    width: 0px;
+    animation: reveal 7s infinite;
+  }
+  
+  .education-heading div:last-of-type span {
+    position: relative;
+    left: -36px;
+    animation: slidein 7s infinite;
+  }
+  
+  @keyframes showup {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  @keyframes slidein {
+    0% { margin-left: -800px; }
+    20% { margin-left: -800px; }
+    35% { margin-left: 0px; }
+    100% { margin-left: 0px; }
+  }
+  
+  @keyframes reveal {
+     0% { opacity: 0; width: 0px; }
+    20% { opacity: 1; width: 0px; }
+    30% { width: 355px; }
+    80% { opacity: 1; }
+   100% { opacity: 0; width: 355px; }
+  }
+  
+  .education-content p {
+    font-size: 24px;
+    color: #d5eaec;
+    margin-top: -213px;
+  }
+  
+  .education-heading:hover div {
+    animation-play-state: paused;
+  }

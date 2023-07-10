@@ -305,15 +305,7 @@ const PersonalDetails = ({ onNext }) => {
                    className="error-message"
                  />
                </div>
-               <div className="form-group-add">
-                 <label htmlFor="address">Address:</label>
-                 <Field as="textarea" name="address" id="address" rows="3" />
-                 <ErrorMessage
-                   name="address"
-                   component="div"
-                   className="error-message"
-                 />
-               </div>
+              
              </div>
 
              <div className="form-column2">
@@ -378,14 +370,12 @@ const PersonalDetails = ({ onNext }) => {
                          type="button"
                          onClick={() => arrayHelpers.push("")}
                        >
-                         Add Hobbies
+                         Add Courses
                        </button>
                      )}
                    </div>
                  )}
                /> */}
-
-             
             </div>
           </div>
 

@@ -1,34 +1,10 @@
-// import React from 'react';
-// import '../../styles/edu.css';
-// import RegistrationForm from '../Pages/RegistrationPortal';
 
-// const EducationPage = () => {
-//   return (
-//     <div className="education-page">
-//       <h1 id='edu-h1'>Welcome to Our Education Institute</h1>
-//       <p id='edu-p'>
-//         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-//         volutpat mauris non leo venenatis posuere. Fusce fringilla tempor
-//         libero vitae fermentum. Aliquam erat volutpat. Sed in libero vel risus
-//         cursus pharetra. Nunc tincidunt lacus et augue volutpat, vitae finibus
-//         justo consectetur. In fringilla iaculis ipsum vel facilisis. Mauris
-//         dignissim, sapien id efficitur consequat, tellus lectus aliquam nisi,
-//         sed consectetur velit nunc vitae purus. Integer facilisis dui augue, vel
-//         viverra velit commodo sed.
-//       </p>
-
-//       <button className="registration-button">Register Now</button>
-
-     
-//     </div>
-//   );
-// };
-
-// export default EducationPage;
 
 import React, { useState } from 'react';
 import '../../styles/edu.css';
 import RegistrationForm from '../Pages/RegistrationPortal';
+import EduBanner from '../NavPages/EduBan';
+import EduSection from './EduSection';
 
 const EducationPage = () => {
   const [showRegistration, setShowRegistration] = useState(false);
@@ -40,27 +16,56 @@ const EducationPage = () => {
   
 
   return (
-    // <div className="education-page">
-    //   <h1 id="edu-h1">Welcome to Our Education Institute</h1>
-    //   <p id="edu-p">
-    //     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-    //     volutpat mauris non leo venenatis posuere. Fusce fringilla tempor
-    //     libero vitae fermentum. Aliquam erat volutpat. Sed in libero vel risus
-    //     cursus pharetra. Nunc tincidunt lacus et augue volutpat, vitae finibus
-    //     justo consectetur. In fringilla iaculis ipsum vel facilisis. Mauris
-    //     dignissim, sapien id efficitur consequat, tellus lectus aliquam nisi,
-    //     sed consectetur velit nunc vitae purus. Integer facilisis dui augue, vel
-    //     viverra velit commodo sed.
-    //   </p>
-
-    //   <button className="registration-button" onClick={handleRegistrationClick}>
-    //     Register Now
-    //   </button>
-
-    //   {showRegistration ? <RegistrationForm /> : null}
-    // </div>
-    <RegistrationForm/>
+    
+    <div className="education-container">
+      <div className="education-ban-container">
+       <EduBanner/>
+      
+     
+      </div>
+      <div className='edu-section-we'>
+      <EduSection/>
+     </div>
+     <div className='card-purpose'>
+            <h2>
+              Our Facilities
+            </h2>
+          </div>
+        <div className="education-section">
+        
+          <div className="education-card">
+          <img src="https://media.istockphoto.com/id/1224309929/photo/digital-native-students-e-learning-over-computers-at-school.jpg?s=612x612&w=0&k=20&c=RntH1W-n6oGXeyGqbufTi8Wx6cqtOuaw_Nu60lUOIBw=" alt="Card1" />
+            <h3 className="card-title">School Education</h3>
+            <p className="card-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus eget dolor ultrices fermentum.
+            </p>
+          </div>
+          <div className="education-card">
+          <img src="https://media.istockphoto.com/id/895483578/photo/school-kids-running-in-schoolyard.jpg?s=612x612&w=0&k=20&c=v-XPC1BMvWqrJJWPOjSLlSarEcL_dKRq47jkIMY64Jk=" alt="Card2" />
+            <h3 className="card-title">Computer Education</h3>
+            <p className="card-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus eget dolor ultrices fermentum.
+            </p>
+          </div>
+          <div className="education-card">
+          <img src="https://media.istockphoto.com/id/669775712/photo/teacher-giving-an-it-class-at-school-to-a-group-of-students.jpg?s=612x612&w=0&k=20&c=kFR__hBLIM-0PW6k4lSqAQJGo-ukLu-bbsOQk_V6edA=" alt="Card3" />
+            <h3 className="card-title">Personality Development</h3>
+            <p className="card-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus eget dolor ultrices fermentum.
+            </p>
+          </div>
+          <div className="education-card">
+          <img src="https://media.istockphoto.com/id/1216453954/photo/empty-classroom.jpg?s=612x612&w=0&k=20&c=HT2jBTNGKfxbFab3_c59hTqO_h36bc915PGYX5I1rNU=" alt="card4" style={{width:"612px",height:"400px"}} />
+            <h3 className="card-title">Job Placement</h3>
+            <p className="card-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus eget dolor ultrices fermentum.
+            </p>
+          </div>
+        </div> 
+      </div>
+    
   );
 };
+
 
 export default EducationPage;

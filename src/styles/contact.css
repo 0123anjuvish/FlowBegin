@@ -4,26 +4,35 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* body {
-    
-    font-size: 12px;
-  } */
+
   .cnct-img-div{
     position: relative;
     top:5em;
+    background-size: cover;
     width: 1349px;
     height: 800px;
-   z-index: -1;
+    background-image: url("https://media.istockphoto.com/id/1346659934/photo/top-view-modern-workspace-with-laptop-computer-and-coffee-cup-on-black-table.jpg?s=612x612&w=0&k=20&c=ILYNXg-gwP_p2HMVQg_oT7AHn1pHCRFGNb597UruGaQ=");
+   /* z-index: -1; */
   }
   .cntct-img {
     width: 1349px;
-    height: 316px;
+    height: 400px;
+  }
+  .contact-text{
+  
+    position: absolute;
+    top: 3em;
+    left: 14em;
+    font-size: 28px;
+    color:#f7f7fb;
+    width: 500px;
+    height: 200px;
   }
   .background{
     position: relative;
-    z-index: -1;
+   
     padding-left: 30px;
-    top:-404px;
+    top:-320px;
     background: #ff5310;
   }
   button, input {
@@ -34,7 +43,7 @@
   
   .background {
     display: flex;
-    height: 675px;
+    height: 600px;
   }
   
   .container {
@@ -50,7 +59,7 @@
     height: 400px;
     width: 600px;
     right: 25em;
-    top: 46px;
+    top: 15px;
   }
   .lft-header{
     font-size: 40px;
@@ -120,7 +129,7 @@ top:90px;
   }
   .screen {
     position: relative;
-    top: -340px;
+    top: -370px;
     left: 18em;
     background:#00008B;
     border-radius: 15px;
@@ -278,7 +287,7 @@ top:90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -200px;
+    margin-top: -320px;
     color: #ffa4bd;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
@@ -298,7 +307,19 @@ top:90px;
     height: 20px;
     margin: 0 5px;
   }
-  
+  .map-container{
+    position: absolute;
+    top:1090px;
+    margin-left: 195px;
+    width: 70%;
+    height: 400px;
+   
+  }
+  .map-iframe{
+    position: relative;
+    height: 300px;
+    width:100%;
+  }
   @media screen and (max-width: 520px) {
     .screen-body {
       flex-direction: column;

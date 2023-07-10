@@ -8,7 +8,7 @@ import PaymentDetails from './PaymentDetails';
 import PersonalDetails from './PersonalDetails';
 
 const RegistrationForm = () => {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(2);
   const [formData, setFormData] = useState({
     personalDetails: {},
     academicDetails: {},
@@ -39,7 +39,7 @@ const RegistrationForm = () => {
       case 1:
         return <PersonalDetails onNext={handleNextStep}  />;
       case 2:
-        return <AcedemicDetails onNext={handleNextStep} studentId={formData.personalDetails.id} onPrevious={handlePreviousStep} />;
+        return <AcedemicDetails onNext={handleNextStep} studentId={formData.personalDetails.id || 2} onPrevious={handlePreviousStep} />;
       case 3:
         return <Document onNext={handleNextStep} studentId={formData.personalDetails.id ||1 } onPrevious={handlePreviousStep} />;
       case 4:

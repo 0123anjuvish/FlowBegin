@@ -1,8 +1,17 @@
 .abt-container{
     position: relative;
-    top:80px;
-    height: 2500px;
-    z-index: -1;
+    top:20px;
+   /* background: url(<path-to-image>), lightgray 0% 0% / 100px 100px repeat;; */
+    height: 2480px;
+    /* z-index: -1; */
+}
+.abt-anm{
+  position: relative;
+  width: 1342px;
+  height: 400px;
+  left:-130px;
+  margin-bottom: 5px;
+  /* background-color: aqua; */
 }
 .wrapper {
     display: flex;
@@ -55,7 +64,7 @@
     color: black;
     text-transform: uppercase;
   }
-
+  
   #mission-txt {
     font-size: 18px;
     font-weight: 500 !important;
@@ -64,22 +73,28 @@
     display: flex;
    justify-content: center;
    text-align: center;
-    /* margin-left: 700px; */
+   
   }
 
-  div img {
+  #div-img {
     width: 150px;
     filter: drop-shadow(0 10px 5px black);
   }
 
- #abt-para {
+ .abt-para {
     text-align: justify;
     color: black;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: Merriweather;
   }
 
   .faculties {
     display: flex;
     flex-wrap: wrap;
+    width: 1375px;
+    position: relative;
+    left:-13px;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -122,10 +137,10 @@
     min-height: 60vh;
     /* background: #00008B; */
     color: rgba(255, 255, 255, 0.7);
-    vertical-align: middle;
+   
     text-align: left;
     position: relative;
-    padding: 150px 10% 50px 10%;
+    padding: 70px 10% 50px 10%;
   }
   
   .about_us > h2{
@@ -189,6 +204,25 @@
     line-height: 1.75;
   }
   .abt-img{
-    width:700px;
+   
+    width:400px;
+    height: 300px;
+  }
+  @keyframes textAnimation {
+    from {
+      opacity: 0;
+      transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(500px) translate3d(0, 0, 0);
+    }
+  }
+  
+  .abt-container p {
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    animation: textAnimation 1s ease-out 1 both;
   }
   

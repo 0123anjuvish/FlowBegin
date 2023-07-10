@@ -14,9 +14,6 @@ const AcedemicDetails = ({ onNext, studentId }) => {
     major: '',
     graduationYear: ''
   };
-
- 
-
   
   const validateForm = values => {
     const errors = {};

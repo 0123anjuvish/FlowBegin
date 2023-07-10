@@ -74,20 +74,28 @@
       }
       .reg-div{
         position: relative;
-        top: 120px;
+        top: 80px;
        margin:0 auto;
        margin-bottom: 150px;
         padding: 20px;
         font-family: Arial, sans-serif;
-        background-color: #a5a5b3;
+        /* background-color: #a5a5b3; */
         width: 1000px;
-        min-height: 760px; 
+        min-height: 700px; 
       }
       
       .registration-form {
-        margin: 100px auto; 
+        
         max-width: 800px;
-        height: 550px;
+        height: 460px;
+      
+      }
+      .personal-detail-form {
+        margin: 40px auto; 
+        position: relative;
+          left: 35px;
+        max-width: 700px;
+        height: 555px;
         padding: 30px;
         background-color: #00008B;
         border-radius: 5px;

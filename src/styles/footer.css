@@ -191,6 +191,18 @@ footer{
   .bottom-details .bottom_text a{
     margin-right: 10px;
   }
+  #subs-btn{
+    width: 100px;
+    height: 37px;
+    margin-left: 175px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  #subs-btn:hover{
+background-color: #ff5310;
+  }
   @media (max-width: 900px) {
     footer .content .link-boxes{
       flex-wrap: wrap;

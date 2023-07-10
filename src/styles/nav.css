@@ -1,7 +1,7 @@
 *{
     margin:0;
     padding:0;
-    font-family: Roboto;
+    /* font-family:Merriweather; */
 }
 .head2{
     position:fixed;
@@ -18,7 +18,7 @@
 }
 
 .dnt-spn{
-  margin: -15px 0 0 600px;
+  margin: -15px 0 0 460px;
   padding: 10px 0 0 10px;
   width: 100px;
   height: 60px;
@@ -48,6 +48,8 @@
 
 .menu-btn {
   /* background-image: conic-gradient(white,white, black); */
+  white-space: nowrap;
+  text-decoration: none;
   color:#00008B;
   padding: 16px;
   font-family: 'Roboto';
@@ -61,9 +63,91 @@
   cursor: pointer;
   color:  #ff5310;
 }
+.menu-btn-abt {
+  /* background-image: conic-gradient(white,white, black); */
+  white-space: nowrap;
+  color:#00008B;
+  margin-top: -16px;
+  text-decoration: none;
+  padding: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+.menu-btn-abt:hover{
+  cursor: pointer;
+  color:  #ff5310;
+}
+.menu-btn-cntc {
+  /* background-image: conic-gradient(white,white, black); */
+  white-space: nowrap;
+  text-decoration: none;
+  color:#00008B;
+  margin-top: -16px;
+  padding: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+.menu-btn-cntc:hover{
+  cursor: pointer;
+  color:  #ff5310;
+}
+.menu-btn-crr {
+  /* background-image: conic-gradient(white,white, black); */
+  text-decoration: none;
+  white-space: nowrap;
+  color:#00008B;
+  margin-top: -16px;
+  padding: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+.menu-btn-crr:hover{
+  cursor: pointer;
+  color:  #ff5310;
+}
+.nvlnk{
+  text-decoration: none;
+  color:#00008B;
+ 
+}
+.nvlnk:hover{
+  cursor: pointer;
+  color:  #ff5310;
+}
+.menu-btn-pay {
+  /* background-image: conic-gradient(white,white, black); */
+  text-decoration: none;
+  color:#00008B;
+  margin-top: -16px;
+  white-space: nowrap;
+  padding: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+.menu-btn-pay:hover{
+  cursor: pointer;
+  color:  #ff5310;
+}
 .dropdown-menu {
   position: relative;
   display: inline-block;
+  white-space: nowrap;
 }
 .menu-content {
   display: none;
@@ -96,8 +180,12 @@
 }
 nav{
   
+  width: 765px;
+  display: flex;
+  flex-direction: row;
+ 
   position: relative;
-  left: 596px;
+  left: 510px;
   top: 6px;
   font-family: 'Roboto';
     font-style: normal;

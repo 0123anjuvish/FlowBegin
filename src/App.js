@@ -5,7 +5,9 @@ import Contact from '../src/components/NavPages/Contact';
 import EducationPage from './components/Pages/Edu';
 import HomePage from './components/Pages/HomePage';
 import Nav from './components/nav';
+import PaymentDetails from './components/Pages/PaymentDetails';
 import Footer from './components/Pages/Footer';
+import RegistrationForm from './components/Pages/RegistrationPortal';
 function App() {
   return (
     <>
@@ -16,8 +18,9 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/education" element={<EducationPage />}/>
         <Route path="/contact" element={<Contact />} />
+        <Route path="/pay" element={<PaymentDetails />} />
         <Route path="/" element={<HomePage />} />
-       
+       <Route path="/register" element={<RegistrationForm/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
