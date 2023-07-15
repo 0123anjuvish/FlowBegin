@@ -38,4 +38,16 @@ const addDocument = async (userdata) => {
     return handleError(res);
 }
 
-export {addStudent, addAcademic, addDocument}
+const addPayments = async (userdata) => {
+    const res = await fetch(`${base.url}student/payment/`,   { 
+        headers: {
+            "Content-Type": "application/json",
+           },
+            method: "POST",
+            body: JSON.stringify(userdata),
+});
+
+    return handleError(res);
+}
+
+export {addStudent, addAcademic, addDocument,addPayments}

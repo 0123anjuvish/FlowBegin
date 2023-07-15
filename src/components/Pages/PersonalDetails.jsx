@@ -210,13 +210,32 @@
 // export default PersonalDetails;
 
 import "../../styles/stuform.css";
+import {  } from "../../Apis/student";
 
 import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
+import  { useEffect, useState } from 'react';
 
 import React from "react";
 import { addStudent } from "../../Apis/student";
+import { getCourse } from "../../Apis/course";
 
 const PersonalDetails = ({ onNext }) => {
+  const [course ,setCouse] = useState([])
+
+  useEffect(() => {
+    const loadCourse = async () => {
+      try {
+        const res = await getCourse();
+        console.log("res", res);
+        setCouse(res);
+      } catch (error) {
+        console.error("Error loading course:", error);
+      }
+    };
+
+    loadCourse();
+  }, []);
+  
   const validateForm = (values) => {
     const errors = {};
 
@@ -310,8 +329,14 @@ const PersonalDetails = ({ onNext }) => {
 
              <div className="form-column2">
                <div className="form-group">
-                 <label>Course Name:</label>
-                 <Field name="course" type="text" />
+                 <label>Course Name :</label>
+                 <Field as="select" name="color">
+                {
+                  course && course.map((val) => (
+                    <option key={val.id} value={val.id}>{val.name}</option>
+                  ))
+                }
+                </Field>
                  <ErrorMessage
                    name="course"
                    component="div"
