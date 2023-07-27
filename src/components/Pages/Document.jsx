@@ -35,8 +35,8 @@ const Document = ({ onNext,studentId }) => {
         if (studentId)
        { const res = await addDocument(formData);
         console.log("res",res)
-        {onNext({documents: res})} 
-
+        if (res)
+        { {onNext({documents: res})} }
       }
       }
     
@@ -58,7 +58,7 @@ const Document = ({ onNext,studentId }) => {
                 <ErrorMessage name="marksheet" component="div" className="error-message" />
               </div>
               <div className="form-group">
-                <label htmlFor="transcript" className="lbl-dox">Adhar</label>
+                <label htmlFor="transcript" className="lbl-dox">Aadhar</label>
                 <Field type="file" name="adhar" id="adhar" className="inpt-dox2"  onChange={(event) => handleFileChange(event, setAdhar, "adhar")}/>
                 <ErrorMessage name="adhar" component="div" className="error-message" />
               </div>

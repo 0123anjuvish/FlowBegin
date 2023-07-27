@@ -47,7 +47,8 @@ const AcedemicDetails = ({ onNext, studentId }) => {
     if (studentId)
    { const res = await addAcademic(data);
     console.log('res',res)
-    onNext({academicDetails: res})
+    if (res)
+   { onNext({academicDetails: res}) }
   }
   }
 

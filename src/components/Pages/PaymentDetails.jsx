@@ -1,11 +1,10 @@
 import '../../styles/stuform.css';
+
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { useState } from 'react';
-import { addPayments } from '../../Apis/student';
+
 import Success from './Success';
-
-
-
+import { addPayments } from '../../Apis/student';
+import { useState } from 'react';
 
 const PaymentDetails = ({ onNext, studentId }) => {
   const [error, setError] = useState();
@@ -41,9 +40,8 @@ const PaymentDetails = ({ onNext, studentId }) => {
     data.student = studentId;
     const res = await addPayments(data);
     console.log('res', res);
-    if (res.id) {
+    if (res) {
       setSubmitted(true); // Set the submitted state to true upon successful form submission
-      onNext({ paymentDetails: res });
     } else {
       console.log("setting error");
       setError("Student doesn't exist");

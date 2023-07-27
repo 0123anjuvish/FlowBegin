@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
 import '../../styles/Success.css';
+
+import React, { useEffect, useState } from 'react';
+
 import Confetti from 'react-confetti';
 import { motion } from 'framer-motion';
+import {useNavigate} from "react-router-dom"
 
-const Success = ({ onClose }) => {
+const Success =  () => {
   const [isConfettiActive, setConfettiActive] = useState(true);
-
+  const navigate = useNavigate()
   useEffect(() => {
     // Stop the confetti after 30 seconds
     const timer = setTimeout(() => {
@@ -18,7 +21,7 @@ const Success = ({ onClose }) => {
     // Close the modal and trigger the onClose function
     setConfettiActive(false);
     setTimeout(() => {
-      onClose();
+      navigate("/")
     }, 500); // A slight delay to allow the confetti to settle
   };
 
