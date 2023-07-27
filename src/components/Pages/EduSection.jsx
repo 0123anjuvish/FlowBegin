@@ -9,6 +9,21 @@ import gal2 from '../../images/15.jpeg';
 import gal3 from '../../images/17.jpeg';
 import gal4 from '../../images/16.jpeg';
 const EduSection = () => {
+    const handleYoutubeClick = () => {
+        window.open('https://www.youtube.com/@Flowbeginfoundation', '_blank');
+      };
+      const handleFcBookClick = () => {
+        window.open('https://www.facebook.com/flowbegin', '_blank');
+      };
+      const handleTwitterClick = () => {
+        window.open('https://www.youtube.com/@Flowbeginfoundation', '_blank');
+      };
+      const handleLnkdnClick = () => {
+        window.open('https://www.linkedin.com/in/flowbegin-foundation-377947284/', '_blank');
+      };
+      const handleInstaClick = () => {
+        window.open('https://www.instagram.com/flowbegin.gos/', '_blank');
+      };
   return (
     <>
       
@@ -41,11 +56,11 @@ const EduSection = () => {
                     <div className="media-icons" style={{ width: "560px",
     marginLeft: "-140px", justifyContent:"space-between",marginTop:"5em",
     display: "flex"}}>
-         <div className='icn-a'><FaFacebookF className='med-icn' style={{marginTop:"24px",fontSize:"24px"}}/></div>
-         <div className='icn-a'><BsTwitter  className='med-icn'style={{marginTop:"24px",fontSize:"24px"}}/></div>
-         <div className='icn-a'><BsInstagram className='med-icn'style={{marginTop:"24px",fontSize:"24px"}}/></div>
-         <div className='icn-a'><FaLinkedinIn className='med-icn'style={{marginTop:"24px",fontSize:"24px"}}/></div>
-         <div className='icn-a'><BsYoutube className='med-icn'style={{marginTop:"24px",fontSize:"20px"}}/></div>
+         <div className='icn-a'><FaFacebookF className='med-icn' style={{marginTop:"24px",fontSize:"24px"}} onClick={handleFcBookClick}/></div>
+         <div className='icn-a'><BsTwitter  className='med-icn'style={{marginTop:"24px",fontSize:"24px"}} onClick={handleTwitterClick}/></div>
+         <div className='icn-a'><BsInstagram className='med-icn'style={{marginTop:"24px",fontSize:"24px"}} onClick={handleInstaClick}/></div>
+         <div className='icn-a'><FaLinkedinIn className='med-icn'style={{marginTop:"24px",fontSize:"24px"}} onClick={handleLnkdnClick}/></div>
+         <div className='icn-a'><BsYoutube className='med-icn'style={{marginTop:"24px",fontSize:"20px"}} onClick={handleYoutubeClick}/></div>
         </div>
                     </div>
                     </div>

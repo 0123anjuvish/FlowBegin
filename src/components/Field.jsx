@@ -49,8 +49,7 @@ const Field = () => {
 
   return (
     <>
-      <div className='field-cont'>
-        <img src={images[currentImage].src} alt="banner" />
+     <div className='field-cont' style={{ '--background-image': `url(${images[currentImage].src})` }}>
         <div className="testDiv">
           <section className="test-container">
             <h2 className="title-h2">

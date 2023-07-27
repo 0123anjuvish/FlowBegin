@@ -5,8 +5,8 @@ import { MdEmail, MdLocationPin } from "react-icons/md";
 import { BsTelephoneInboundFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import {React,useState} from "react";
-import logo from "../images/logo2.png";
-import PayModal from "./Pages/PayModal";
+import logo from "../images/i_logo.png";
+import PayModal from "./Pages/Success";
 
 
 const Nav = () => {
@@ -33,24 +33,7 @@ const Nav = () => {
         </span>
 
         <nav>
-          {/* <div className="dropdown-menu">
-            <span className="menu-btn">Who We Are</span>
-            <div className="menu-content">
-              <NavLink to="/about" className="links-hidden">
-                About Us
-              </NavLink>
-              <NavLink to="/contact" className="links-hidden">
-                Contact Us
-              </NavLink>
-              <NavLink to="/ourPartner" className="links-hidden">
-                Our Parteners
-              </NavLink>
-              <NavLink to="/Test" className="links-hidden">
-                {" "}
-                Testimonials
-              </NavLink>
-            </div>
-          </div> */}
+       
             <div className="dropdown-menu">
             <span className="menu-btn">What We Do</span>
             <div className="menu-content">
@@ -82,8 +65,10 @@ const Nav = () => {
            </div>
         
           <div className="menu-btn-pay">
-          <button className="nvlnk" style={{border:"none", fontSize:"16px"}} onClick={handlePayment}>
-          Fee Payment
+          <button className="nvlnk" style={{border:"none", fontSize:"16px"}} >
+            <NavLink to ='/pay' style={{border:"none", fontSize:"16px",textDecoration:"none", color:"#00008B"}} >
+         Contribution
+          </NavLink>
         </button>
           </div>
           {showModal && (
@@ -95,7 +80,7 @@ const Nav = () => {
           <div className="dropdown-menu">
             <span className="menu-btn" >Events</span>
             <div className="menu-content">
-              <a className="nvlnk">
+            <a className="nvlnk" style={{marginLeft:"16px"}}>
                 Event1
               </a>
               <a className="links-hidden" >

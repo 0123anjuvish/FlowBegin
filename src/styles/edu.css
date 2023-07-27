@@ -4,13 +4,14 @@
      max-width: 1430px;
      height: 2800px;
     /* margin: 0 auto; */
-    margin-bottom: -16em;
+    margin-bottom: -10em;
     padding: 20px;
     text-align: center;
    
       }
   
   #edu-h1 {
+
     font-size: 34px;
     margin-bottom: 20px;
     color:#140B5C;
@@ -54,10 +55,10 @@
   }
   .education-ban-container{
     position: relative;
-    top: -5em;
-    /* background-color: red;; */
+    top: -35px;
+     background-color: rgb(244 244 247);
     width: 103%;
-    height:500px;
+    height:768px;
     background-image: url(https://lifeline.webinane.com/wp-content/uploads/2020/11/sdasss-2.png);
     background-position: -175px 0px;
     background-repeat: no-repeat;

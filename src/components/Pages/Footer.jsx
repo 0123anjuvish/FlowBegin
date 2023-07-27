@@ -1,18 +1,28 @@
-import React from 'react'
+import {React,useState} from 'react'
 import '../../styles/footer.css';
+import Success from '../Pages/Success';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import {BsTwitter,BsInstagram,BsYoutube} from "react-icons/bs";
 import { FaFacebookF,FaLinkedinIn } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 const Footer = () => {
+  const [submitted, setSubmitted] = useState(false);
+
   const initialValues = {
     email: '',
   };
 
+ 
   const handleSubmit = (values, { resetForm }) => {
-    
-    console.log(values.email);
     resetForm();
+    
+    setSubmitted(true);
   };
+
+  const handleCloseModal = () => {
+    setSubmitted(false);
+  };
+
 
   const validateForm = (values) => {
     const errors = {};
@@ -35,11 +45,13 @@ const Footer = () => {
           <span className="logo_name">FlowBegin Foundation</span>
         </div>
         <div className="media-icons">
-          <a  ><FaFacebookF className='med-icn'/></a>
-          <a ><BsTwitter  className='med-icn'/></a>
-          <a ><BsInstagram className='med-icn'/></a>
-          <a ><FaLinkedinIn className='med-icn'/></a>
-          <a ><BsYoutube className='med-icn'/></a>
+          <a href='https://www.facebook.com/flowbegin/' ><FaFacebookF className='med-icn'/></a>
+          <a href=''><BsTwitter  className='med-icn'/></a>
+          <a href='https://www.instagram.com/flowbegin.gos/'><BsInstagram className='med-icn'/></a>
+          <a href="https://www.linkedin.com/in/flowbegin-foundation-377947284/" target="_blank" rel="noopener noreferrer">
+      <FaLinkedinIn className='med-icn' />
+    </a>
+          <a  href='https://www.youtube.com/@Flowbeginfoundation'><BsYoutube className='med-icn'/></a>
         </div>
       </div>
       <div className="link-boxes">
@@ -75,6 +87,7 @@ const Footer = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validate={validateForm}
+      
     >
       <Form className="box input-box">
         <li className="link_name">Subscribe</li>
@@ -83,12 +96,15 @@ const Footer = () => {
           <ErrorMessage name="email" component="div" className="error" />
         </li>
         <li>
-          <button type="submit" id='subs-btn'>Subscribe</button>
+      
+          <button type="submit" id='subs-btn' >Subscribe</button>
+         
         </li>
       </Form>
     </Formik>
       </div>
     </div>
+   
     <div className="bottom-details">
       <div className="bottom_text">
         <span className="copyright_text">Copyright © 2023 <a href="#">FlowBegin Foundation.</a>All rights reserved</span>
@@ -99,6 +115,9 @@ const Footer = () => {
       </div>
     </div>
   </footer>
+ 
+  {submitted && <Success onClose={() => setSubmitted(false)} />}
+  
    </>
   )
 }

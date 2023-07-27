@@ -8,6 +8,7 @@ import Nav from './components/nav';
 import PaymentDetails from './components/Pages/PaymentDetails';
 import Footer from './components/Pages/Footer';
 import RegistrationForm from './components/Pages/RegistrationPortal';
+import Suc from './components/Pages/Suc';
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/pay" element={<PaymentDetails />} />
         <Route path="/" element={<HomePage />} />
        <Route path="/register" element={<RegistrationForm/>} />
+       <Route path="/submit" element={<Suc/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

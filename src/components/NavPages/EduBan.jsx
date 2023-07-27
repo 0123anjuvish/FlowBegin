@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../styles/Eduban.css';
+import eduImg from '../../images/EduImg.jpg'
 import { NavLink } from "react-router-dom";
 const EduBanner = () => {
   return (
@@ -27,8 +28,10 @@ const EduBanner = () => {
       <div className="elementor-element elementor-element-1788238 elementor-widget elementor-widget-image" data-id="1788238" data-element_type="widget" data-widget_type="image.default">
         <div className="elementor-widget-container">
        
-  <img id='img-ban-edu' src='https://media.istockphoto.com/id/1033277722/photo/textbooks-on-wooden-school-desk-with-chalkboard.jpg?s=612x612&w=0&k=20&c=l9q-CmG8sf7iNNygEiGEHp-LHt2_w9noAYwQNAIzk9k=' alt='education'/>
-
+  <img id='img-ban-edu'
+  //  src='https://media.istockphoto.com/id/1033277722/photo/textbooks-on-wooden-school-desk-with-chalkboard.jpg?s=612x612&w=0&k=20&c=l9q-CmG8sf7iNNygEiGEHp-LHt2_w9noAYwQNAIzk9k=' alt='education'
+  src={eduImg}
+  />
         
         </div>
       </div>

@@ -3,6 +3,10 @@
     overflow: hidden; 
     top: 80px;
     height: 800px;
+    background-image: var(--background-image);
+    /* Add other necessary styles like width, height, background-size, etc. */
+    background-size: cover;
+    background-position: center;
    
 }
 .field-cont img{
@@ -21,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top:-480px;
+    top:170px;
     position: relative; 
     overflow: hidden; 
   }
@@ -122,8 +126,8 @@
   .test-div-btn .know-btn {
     font-family: "Quicksand", Sans-serif;
     position: relative;
-    top: -698px;
-    left: 990px;
+    /* top: -698px; */
+    left: 1000px;
     font-size: 26px;
     font-weight: 700;
     text-transform: uppercase;

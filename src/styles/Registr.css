@@ -70,7 +70,8 @@
    
       .registration-container {
         margin: 0 auto; 
-      
+        background-image: url(https://lifeline.webinane.com/wp-content/uploads/2020/11/sdasss-2.png);
+        min-height: 790px; 
       }
       .reg-div{
         position: relative;
@@ -79,9 +80,9 @@
        margin-bottom: 150px;
         padding: 20px;
         font-family: Arial, sans-serif;
-        /* background-color: #a5a5b3; */
+       
         width: 1000px;
-        min-height: 700px; 
+       
       }
       
       .registration-form {

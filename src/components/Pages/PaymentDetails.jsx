@@ -1,103 +1,110 @@
 import '../../styles/stuform.css';
-
-import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
-import  { useEffect, useState } from 'react';
-
-import React from 'react';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useState } from 'react';
 import { addPayments } from '../../Apis/student';
+import Success from './Success';
+
+
+
 
 const PaymentDetails = ({ onNext, studentId }) => {
-  
-    const [error, setError] = useState()  
-    const initialValues = {
+  const [error, setError] = useState();
+  const [submitted, setSubmitted] = useState(false); // Track whether the form has been submitted
+  const initialValues = {
     phone_number: '',
-    payment_method: '',
-    ammount: ''
+    paymentMethod: '',
+    ammount: '',
   };
-  
+
   const validateForm = values => {
     const errors = {};
 
     if (!values.phone_number) {
       errors.phone_number = "Required";
     } else if (!/^[0-9]{10}$/i.test(values.phone_number)) {
-      errors.phone_number = "Invalid phone_number number";
+      errors.phone_number = "Invalid phone_number";
     }
 
-    if (!values.payment_method) {
-      errors.payment_method = 'Required';
+    if (!values.paymentMethod) {
+      errors.paymentMethod = 'Required';
     }
 
     if (!values.ammount) {
       errors.ammount = 'Required';
     }
 
-
     return errors;
   };
-  const handleSubmit = async(data)=>{
-    console.log("data",data)
-      data.student = studentId
+
+  const handleSubmit = async data => {
+    console.log("data", data);
+    data.student = studentId;
     const res = await addPayments(data);
-    console.log('res',res)
-    if (res.id){
-    onNext({paymentDetails: res})
+    console.log('res', res);
+    if (res.id) {
+      setSubmitted(true); // Set the submitted state to true upon successful form submission
+      onNext({ paymentDetails: res });
+    } else {
+      console.log("setting error");
+      setError("Student doesn't exist");
     }
-    else {
-      console.log("setting error")
-      setError("Student doesnt exist")
-    }
-  }
+  };
 
   return (
-   
-    <Formik
-      initialValues={initialValues}
-      validate={validateForm}
-      onSubmit={values => {
-        // same shape as initial values
-        handleSubmit(values)
-      }}
-    
-    >
-      {({values, isSubmitting }) => (
-   
-        <Form className="academic-detail-form">
-            {error ? (   <div className="form-group">
-            
-            <label htmlFor="phone_number">PHONE NUMBER INVALID STUDNENT DOESNT EXIST</label>
- 
-          </div>):(null)}
-         
+    <div>
+    {submitted ? (
+      // Show the "Thanks" component when the form is successfully submitted
+      <Success />
+    ) : (
+        // Render the form when the form is not submitted yet
+        <Formik
+          initialValues={initialValues}
+          validate={validateForm}
+          onSubmit={values => {
+            handleSubmit(values);
+          }}
+        >
+         {({ values, isSubmitting }) => (
+            <div className='pay-div'>
+           <Form className="payment-detail-form">
+             <h4 >Contribution</h4>
+             {error ? (
                <div className="form-group">
-                 <label htmlFor="phone_number">phone_number:</label>
-                 <Field type="text" name="phone_number" id="phone_number" />
-                 <ErrorMessage
-                   name="phone_number"
-                   component="div"
-                   className="error-message"
-                 />
+                 <label htmlFor="phone_number" className='pay-lbl'>
+                   PHONE NUMBER INVALID STUDENT DOESN'T EXIST
+                 </label>
                </div>
-
-          <div className="form-group">
-            <label htmlFor="payment_method">payment_method</label>
-            <Field type="text" name="payment_method" id="payment_method" />
-            <ErrorMessage name="payment_method" component="div" className="error-message" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="ammount">Ammount</label>
-            <Field type="text" name="ammount" id="ammount" />
-            <ErrorMessage name="ammount" component="div" className="error-message" />
-          </div>  
-          <button type="submit" >Submit</button>
-        </Form>
+             ) : null}
+ 
+             <div className="form-group-pay">
+               <label htmlFor="phone_number" className='pay-lbl'>Phone_Number:</label>
+               <Field type="text" name="phone_number" id="phone_number" style={{ position: "relative", left: "5px" }} />
+               <ErrorMessage
+                 name="phone_number"
+                 component="div"
+                 className="error-message"
+               />
+             </div>
+ 
+             <div className="form-group-pay">
+               <label htmlFor="paymentMethod" className='pay-lbl'>paymentMethod:</label>
+               <Field type="text" name="paymentMethod" id="paymentMethod" />
+               <ErrorMessage name="paymentMethod" component="div" className="error-message" />
+             </div>
+ 
+             <div className="form-group-pay">
+               <label htmlFor="ammount" className='pay-lbl'>ammount:</label>
+               <Field type="text" name="ammount" id="ammount" style={{ position: "relative", left: "45px" }} />
+               <ErrorMessage name="ammount" component="div" className="error-message" />
+             </div>
+             <button type="submit" id='pay-btn'>Submit</button>
+           </Form>
+         </div>
+          )}
+        </Formik>
       )}
-    </Formik>
+    </div>
   );
 };
-      
-   
- 
 
-export default PaymentDetails
+export default PaymentDetails;

@@ -70,7 +70,7 @@ const Contact = () => {
         </div>
         <div className='lft-cntct-add'>
         For Donation touch us on :
-        <h6 className='cntct-h6D'>  test@gmail.com  or call us on - 9278336669</h6>
+        <h6 className='cntct-h6D'>  info@flowbegin.org  or call us on - 9205535669/9625800669</h6>
         
         </div>
        
@@ -95,7 +95,7 @@ const Contact = () => {
             <span>CONTACT US</span>
            
           </div>
-          <div className="app-contact">CONTACT INFO : +91 9278336669</div>
+          <div className="app-contact">CONTACT INFO : +91 9205535669/9625800669</div>
         </div>
         <div className="screen-body-item">
         <Formik
