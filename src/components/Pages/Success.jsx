@@ -24,7 +24,7 @@ const Success = ({ onClose }) => {
 
   return (
     <div className="modal-container">
-      <Confetti active={isConfettiActive} />
+      <Confetti active={isConfettiActive} style={{marginLeft:"311"}}/>
       <motion.div className="modal" initial={{ scale: 0 }} animate={{ scale: 1 }}>
         <h2 className='modal-h2'>Success!</h2>
         <p className='modal-p'>You have successfully submitted your form. Thanks for registering with us.</p>
