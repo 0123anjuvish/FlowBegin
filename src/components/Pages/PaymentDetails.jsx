@@ -13,6 +13,7 @@ const PaymentDetails = ({ onNext, studentId }) => {
     phone_number: '',
     paymentMethod: '',
     ammount: '',
+    first_name : '',
   };
 
   const validateForm = values => {
@@ -28,6 +29,10 @@ const PaymentDetails = ({ onNext, studentId }) => {
       errors.paymentMethod = 'Required';
     }
 
+    if (!values.first_name) {
+      errors.first_name = 'Required';
+    }
+
     if (!values.ammount) {
       errors.ammount = 'Required';
     }
@@ -37,10 +42,10 @@ const PaymentDetails = ({ onNext, studentId }) => {
 
   const handleSubmit = async data => {
     console.log("data", data);
-    data.student = studentId;
+    data.student = studentId ;
     const res = await addPayments(data);
     console.log('res', res);
-    if (res) {
+    if (res.id) {
       setSubmitted(true); // Set the submitted state to true upon successful form submission
     } else {
       console.log("setting error");
@@ -69,7 +74,7 @@ const PaymentDetails = ({ onNext, studentId }) => {
              {error ? (
                <div className="form-group">
                  <label htmlFor="phone_number" className='pay-lbl'>
-                   PHONE NUMBER INVALID STUDENT DOESN'T EXIST
+                   PHONE NUMBER OR NAME INVALID STUDENT DOESN'T EXIST
                  </label>
                </div>
              ) : null}
@@ -79,6 +84,16 @@ const PaymentDetails = ({ onNext, studentId }) => {
                <Field type="text" name="phone_number" id="phone_number" style={{ position: "relative", left: "5px" }} />
                <ErrorMessage
                  name="phone_number"
+                 component="div"
+                 className="error-message"
+               />
+             </div>
+
+             <div className="form-group-pay">
+               <label htmlFor="first_name" className='pay-lbl'>First Name:</label>
+               <Field type="text" name="first_name" id="first_name" style={{ position: "relative", left: "5px" }} />
+               <ErrorMessage
+                 name="first_name"
                  component="div"
                  className="error-message"
                />
