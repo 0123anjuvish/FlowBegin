@@ -5,13 +5,17 @@ import { MdEmail, MdLocationPin } from "react-icons/md";
 import { BsTelephoneInboundFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import {React,useState} from "react";
-import logo from "../images/i_logo.png";
+import lgName from "../images/logo1.png";
+import logo from '../images/main-logo.png';
 import PayModal from "./Pages/Success";
 
 
 const Nav = () => {
   const [showModal, setShowModal] = useState(false);
-
+  const [showMenu, setShowMenu] = useState(false);
+  const handleToggle = () => {
+    setShowMenu(!showMenu);
+  };
   const handlePayment = () => {
     setShowModal(true);
   };
@@ -22,20 +26,31 @@ const Nav = () => {
   };
   return (
     <>
-      <div className="head2">
+      {/* <div className="head2"> */}
+      <div className={`head2 ${showMenu ? "show-menu" : ""}`}>
         <span id="logo">
+        <img src={logo} alt="logo" />
+        </span>
+        <span id="logo1">
+          
         <NavLink to="/">
           <a href='/'>
            
-          <img src={logo} alt="logo" />
+          <img src={lgName} alt="logo-name" />
+          <p style="color: white;">Foundation</p>
           </a>
           </NavLink>
         </span>
 
-        <nav>
-       
-            <div className="dropdown-menu">
-            <span className="menu-btn">What We Do</span>
+        {/* <button className="mobile-toggle" onClick={handleToggle}>
+          Toggle Menu
+        </button> */}
+
+        <nav className={`mobile-nav ${showMenu ? "show" : ""}`}>
+          <div className="dropdown-menu">
+            <span className="menu-btn" onClick={handleToggle}>
+              What We Do
+            </span>
             <div className="menu-content">
               <a className="links-hidden" href="#">
               Our Campaigns

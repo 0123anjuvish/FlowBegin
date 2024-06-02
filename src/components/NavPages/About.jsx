@@ -1,8 +1,7 @@
 import React from 'react'
 import '../../styles/about.css';
-import Card from '../Pages/card';
 import AbtBanner from '../Pages/AbtBanner';
-
+import Volunteer from '../Pages/volunteer';
 const About = () => {
   return (
     <>
@@ -25,7 +24,7 @@ const About = () => {
           </p>
   <div className='card-img-div'>
  
-  {/* <Card/> */}
+  
   </div>
   <span style={{color:"black", fontSize:"34px"}}>OUR COMMITMENT</span>
   <p className='abt-para'>
@@ -33,41 +32,53 @@ const About = () => {
           </p>
 </div>
 
-    <div className="wrapper2">
-      <h2>Faculties</h2>
-      <div className="faculties">
+    {/* <div className="wrapper2">
+      <h2>Our Team</h2> */}
+      {/* <div className="faculties">
         <div className="unit">
-          <img id="div-img"src="https://png.pngtree.com/png-vector/20190703/ourmid/pngtree-human-avatar-free-vector-png-image_1535585.jpg" alt=""/>
-          <p className='abt-para'>Jona Chen, Director</p>
-          <p className='abt-para'>With years of experience in the education sector, Jona Chen brings visionary leadership and a passion for transforming lives through quality education.</p>
+          <img id="div-img"src= {anju} alt="director-image"/>
+          <p className='abt-para'></p>
+          <p className='abt-para'>
+            </p>
             </div>
         <div className="unit">
-          <img   id="div-img" src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt=""/>
-          <p className='abt-para'>Mathew Tram, Principal</p>
+          <img   id="div-img" src=
+{vishal} alt="Community-Mobilizer"/>
+          <p className='abt-para'>Vishal, Community Mobilizer</p>
           <p className='abt-para'>As the Principal, Mathew Tram is dedicated to providing a nurturing and inclusive learning environment that encourages students' growth and development.</p>
+            
             </div>
             
         <div className="unit">
-          <img id="div-img"  src="https://img.freepik.com/free-psd/3d-illustration-person-with-long-hair_23-2149436197.jpg?size=626&ext=jpg&ga=GA1.2.1974617117.1671349017&semt=ais" alt=""/>
-          <p className='abt-para'>Lawn Sethi, Vice Principal</p>
-          <p className='abt-para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus unde aliquid laborum voluptatum distinctio nobis?'</p>
+          <img id="div-img"
+            src={nik} alt="Supervisor"/>
+          <p className='abt-para'>Nikesh Kumar, Supervisor</p>
+         /
         </div>
        
         <div className="unit">
-          <img  id="div-img" src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt=""/>
-          <p className='abt-para'>Mathew Tram, Principal</p>
-          <p className='abt-para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus unde aliquid laborum voluptatum distinctio nobis?'</p>
-
+          <img  id="div-img" src=
+         {deepak} alt="Faculty"/>
+          <p className='abt-para'>Deepak Kumar, Faculty</p>
+          
         </div>
         <div className="unit">
-          <img  id="div-img" src="https://img.freepik.com/free-psd/3d-illustration-person-with-long-hair_23-2149436197.jpg?size=626&ext=jpg&ga=GA1.2.1974617117.1671349017&semt=ais" alt=""/>
-          <p className='abt-para'>Lawn Sethi, Vice Principal</p>
-          <p className='abt-para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus unde aliquid laborum voluptatum distinctio nobis?'</p>
+          <img  id="div-img" src=
+         {avi} alt="IT-Support"/>
+          <p className='abt-para'>AvinashVishwakarma, IT Support</p>
+         
         </div>
-      </div>
-    </div>
+      </div> */}
 
+
+    {/* </div> */}
+
+    <div className="wrapper2">
+      <h2>Our Team</h2>
+  <Volunteer/>
   </div>
+  </div>
+
     </>
   )
 }

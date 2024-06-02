@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import '../styles/field.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { NavLink } from "react-router-dom";
-import img1 from '../images/7.jpeg';
-import img2 from '../images/2.jpeg';
+import img1 from '../images/imgg4.jpg';
+import img2 from '../images/imgg6.jpg';
 
-import img3 from '../images/12.jpeg';
+import img3 from '../images/imgg8.jpg';
 const Field = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
@@ -49,13 +49,16 @@ const Field = () => {
 
   return (
     <>
-     <div className='field-cont' style={{ '--background-image': `url(${images[currentImage].src})` }}>
+     <div className='field-cont'
+      style={{ backgroundImage: `url(${images[currentImage].src})` }}
+     
+      >
         <div className="testDiv">
           <section className="test-container">
             <h2 className="title-h2">
               <span>{images[currentImage].content.title}</span>
               <span>{images[currentImage].content.subtitle}</span>
-              {/* <span className="description-hidden">{images[currentImage].content.description}</span> */}
+            
             </h2>
            
           </section>

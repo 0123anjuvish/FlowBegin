@@ -37,10 +37,7 @@ const EduSection = () => {
                     <img src={gal2} alt="Students"/>
                     <img src={gal3} alt="Students"/>
                     <img src={gal4} alt="Students"/>
-  {/* <img src="https://picsum.photos/id/174/400/400" alt="a hot air balloon"/>
-  <img src="https://picsum.photos/id/188/400/400" alt="a sky photo of an old city"/>
-  <img src="https://picsum.photos/id/211/400/400" alt="a small boat"/>
-  <img src="https://picsum.photos/id/28/400/400" alt="a forest"/> */}
+ 
 </div>
                  
             </div>

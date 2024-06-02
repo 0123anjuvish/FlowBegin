@@ -22,7 +22,9 @@ const Services = () => {
             </div>
             <div className='ser-img-cont-iName'>
             <div className='ser-img-cont-icon' style={{color:"blue"}}><MdCastForEducation/></div> 
-            <NavLink to="/education"  style={{display:"inline-block", color:"black",textDecoration: 'none'}}>Education</NavLink>  
+            <NavLink to="/education"  
+            style={{display:"inline", color:"black",textDecoration: 'none',cursor:'pointer'}}
+            >Education</NavLink>  
             
             </div>
             </li>

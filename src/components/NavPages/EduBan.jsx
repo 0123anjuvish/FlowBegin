@@ -29,7 +29,7 @@ const EduBanner = () => {
         <div className="elementor-widget-container">
        
   <img id='img-ban-edu'
-  //  src='https://media.istockphoto.com/id/1033277722/photo/textbooks-on-wooden-school-desk-with-chalkboard.jpg?s=612x612&w=0&k=20&c=l9q-CmG8sf7iNNygEiGEHp-LHt2_w9noAYwQNAIzk9k=' alt='education'
+ 
   src={eduImg}
   />
         

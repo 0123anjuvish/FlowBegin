@@ -41,9 +41,10 @@
     align-items: center;
     text-align: center;
     background: rgb(223, 215, 215);
-    margin: 13px auto;
+    margin: 13px 0 0 10px;
+    
     padding: 5px 30px;
-    width:1349px;
+    width:1290px;
     box-shadow: 0 0 5px black;
   }
   .hr {
@@ -92,7 +93,7 @@
   .faculties {
     display: flex;
     flex-wrap: wrap;
-    width: 1375px;
+    width: 1320px;
     position: relative;
     left:-13px;
     justify-content: center;

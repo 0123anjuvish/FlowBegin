@@ -185,7 +185,7 @@ nav{
   flex-direction: row;
  
   position: relative;
-  left: 510px;
+  left: 460px;
   top: 6px;
   font-family: 'Roboto';
     font-style: normal;
@@ -235,13 +235,27 @@ nav{
 
   #logo{
     position: absolute;
-    top: 10px;
-    left: 4px;
+    top: 0px;
+    left: 10px;
     width: 28%;
     height: 72px;
     border: none;
   }
   #logo img{
+    width: 17%;
+    height: 70px;
+   
+  }
+
+  #logo1{
+    position: absolute;
+    top: 0px;
+    left: 72px;
+    width: 28%;
+    height: 72px;
+    border: none;
+  }
+  #logo1 img{
     width: 86%;
     height: 65px;
    
@@ -258,4 +272,55 @@ nav{
   }
  
   
+  /*************Media Query ******************/
+  /* Add your existing styles here */
+
+/* Media query for mobile styles */
+@media (max-width: 768px) {
+  .head2 {
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px auto;
+  }
+  .dnt-spn{
+    margin: -46px 0 0 170px;
+    padding: 10px 0 0 10px;
+    width: 100px;
+    height: 60px;
+    font-family: Roboto;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  .mobile-nav.show {
+    display: flex;
+    background-color: #e5f1f1;
+    position: absolute;
+    top: 80px;
+    left: 260px;
+  }
+  .menu-btn-abt {
+    /* background-image: conic-gradient(white,white, black); */
+    white-space: nowrap;
+    color: #00008B;
+    margin-top: -16px;
+  }
+  .menu-btn-crr {
+    /* background-image: conic-gradient(white,white, black); */
+    text-decoration: none;
+    white-space: nowrap;
+    color: #00008B;
+    margin-top: -16px;
+  }
   
+}

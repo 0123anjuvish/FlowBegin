@@ -1,8 +1,8 @@
 .service-div{
 position: relative;
-z-index: -1;
+/* z-index: -1; */
 top: 0px;
-width: 1349px;
+width: 1303px;
 height: 700px;
 background: #fcfafa;
 color: black;

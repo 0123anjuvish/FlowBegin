@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/AbtBan.css';
 import { NavLink } from "react-router-dom";
+import img6a from '../../images/img6a.jpg';
 const AbtBanner = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const AbtBanner = () => {
             className="fixed-bg"
             style={{
               backgroundImage:
-                'url(https://lifeline.webinane.com/wp-content/uploads/2023/05/banner-3-1.jpg)',
+              `url(${img6a})`, 
             }}
           ></div>
           <div className="container">

@@ -1,0 +1,87 @@
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -84px;
+  }
+  
+  .main-volunteer {
+    padding: 20px;
+    margin-right: 250px;
+    text-align: center;
+  }
+  
+  .main-volunteer img {
+    width: 600px;
+    height: 400px;
+    object-fit: contain;
+    border-radius: 20%;
+    margin-bottom: 10px;
+   
+}
+.main-volunteer.zoomed img {
+    transform: scale(2.5); 
+    transition: transform 1.2s ease; 
+    /* object-fit: contain; */
+  /* max-width: 10%; 
+  max-height: 10%;  */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);  */
+  
+  }
+  
+
+  .volunteer-list {
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -257px;
+    margin-bottom: 300px;
+    
+    transition: transform 0.5s ease;
+  }
+  
+  .volunteer-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 0px;
+    cursor: pointer;
+  }
+  
+  .volunteer-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8%;
+  }
+  
+  
+  .arrow {
+    cursor: pointer;
+    align-items: flex-start;
+    margin-top: -100px;
+    color: teal;
+    cursor: pointer;
+    display: flex;
+    font-size: 5rem;
+    font-weight: bold;
+    height: 4rem;
+    margin-left: 500px;
+   
+    line-height: 3.7rem;
+    overflow: hidden;
+    
+    width: 5rem;
+  }
+  .description-div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   top: 5em;
+   left: 0em;
+  }
+  .description-div p{
+    padding: 5px;
+  }
