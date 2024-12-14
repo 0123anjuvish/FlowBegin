@@ -12,22 +12,22 @@ import Suc from './components/Pages/Suc';
 function App() {
   return (
     <>
-   
-   <BrowserRouter>
-   <Nav/>
-      <Routes>
-      <Route path="/about" element={<About />} />
-      <Route path="/education" element={<EducationPage />}/>
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/pay" element={<PaymentDetails />} />
-        <Route path="/" element={<HomePage />} />
-       <Route path="/register" element={<RegistrationForm/>} />
-       <Route path="/submit" element={<Suc/>} />
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
- 
-  
+
+      <BrowserRouter>
+        {/* <Nav /> */}
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/education" element={<EducationPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/pay" element={<PaymentDetails />} />
+          <Route path="/register" element={<RegistrationForm />} />
+          <Route path="/submit" element={<Suc />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+
+
     </>
   );
 }
