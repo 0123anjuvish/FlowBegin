@@ -9,9 +9,9 @@ export default function About() {
         </p>
       </div>
 
-      <div style={{ display: "grid", gap: "4rem" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", alignItems: "center" }}>
-          <div style={{ flex: "1 1 400px" }}>
+      <div className="about-grid">
+        <div className="about-row">
+          <div className="about-text">
             <h2 style={{ color: "var(--primary)", marginBottom: "1rem" }}>Our Mission</h2>
             <p>
               At Flowbegin, our mission is to empower children from marginalized communities by providing
@@ -23,20 +23,20 @@ export default function About() {
               opportunities are not limited by a child's socio-economic background.
             </p>
           </div>
-          <div style={{ flex: "1 1 400px", height: "300px", backgroundColor: "var(--surface)", borderRadius: "var(--radius-lg)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-             <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, rgba(245,158,11,0.2), rgba(59,130,246,0.2))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div className="about-image-container">
+             <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, rgba(var(--secondary-rgb), 0.2), rgba(var(--primary-rgb), 0.2))", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ fontSize: "4rem", opacity: 0.5 }}>🌱</span>
              </div>
           </div>
         </div>
 
-        <div style={{ display: "flex", flexWrap: "wrap-reverse", gap: "2rem", alignItems: "center" }}>
-          <div style={{ flex: "1 1 400px", height: "300px", backgroundColor: "var(--surface)", borderRadius: "var(--radius-lg)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-             <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, rgba(59,130,246,0.2), rgba(245,158,11,0.2))", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div className="about-row reverse">
+          <div className="about-image-container">
+             <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, rgba(var(--primary-rgb), 0.2), rgba(var(--secondary-rgb), 0.2))", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ fontSize: "4rem", opacity: 0.5 }}>🌟</span>
              </div>
           </div>
-          <div style={{ flex: "1 1 400px" }}>
+          <div className="about-text">
             <h2 style={{ color: "var(--primary)", marginBottom: "1rem" }}>Our Vision</h2>
             <p>
               A world where every child, regardless of their circumstances, has the tools,

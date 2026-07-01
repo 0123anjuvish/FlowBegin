@@ -22,7 +22,7 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="grid-2" style={{ gap: "4rem" }}>
+      <div className="grid-2 contact-grid">
         <div>
           <h2 style={{ marginBottom: "2rem" }}>Get in Touch</h2>
           
@@ -34,9 +34,9 @@ export default function Contact() {
               <div>
                 <h3 style={{ marginBottom: "0.5rem" }}>Visit Us</h3>
                 <p style={{ color: "var(--text-muted)", margin: 0 }}>
-                  123 Hope Street<br />
-                  New Delhi, 110001<br />
-                  India
+                  Plot no. 17 GF near Jwala Mandir<br />
+                  Prem Nagar 3rd, Kirari<br />
+                  Delhi, 110086
                 </p>
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function Contact() {
               <div>
                 <h3 style={{ marginBottom: "0.5rem" }}>Call Us</h3>
                 <p style={{ color: "var(--text-muted)", margin: 0 }}>
-                  +91 98765 43210<br />
+                  +91 92055 35669<br />
                   Mon-Fri, 9am - 6pm
                 </p>
               </div>

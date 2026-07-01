@@ -14,7 +14,7 @@ export default function Home() {
             Every child deserves a chance. We provide education, skill development,
             and essential support to underprivileged children to help them realize their true potential.
           </p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
+          <div className="hero-buttons">
             <Link href="/contact" className="btn-primary">
               Get Involved
             </Link>
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
       
       <section className="section">
-        <div className="container" style={{ textAlign: "center", padding: "4rem 2rem", backgroundColor: "rgba(245, 158, 11, 0.1)", borderRadius: "var(--radius-lg)" }}>
+        <div className="container" style={{ textAlign: "center", padding: "4rem 2rem", backgroundColor: "rgba(var(--primary-rgb), 0.1)", borderRadius: "var(--radius-lg)" }}>
           <h2 style={{ marginBottom: "1.5rem" }}>Ready to Make a Difference?</h2>
           <p style={{ color: "var(--text-main)", maxWidth: "700px", margin: "0 auto 2.5rem" }}>
             Join our mission to transform lives. Whether you want to volunteer, donate, or 
