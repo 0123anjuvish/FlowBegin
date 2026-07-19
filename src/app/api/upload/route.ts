@@ -40,17 +40,21 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
-    const uploadDir = path.join(process.cwd(), "public", "uploads");
-    if (!fs.existsSync(uploadDir)) {
-      return NextResponse.json({ images: [] });
+    const folders = ["uploads", "work", "carousel"];
+    let allImages: string[] = [];
+
+    for (const folder of folders) {
+      const dirPath = path.join(process.cwd(), "public", folder);
+      if (fs.existsSync(dirPath)) {
+        const files = fs.readdirSync(dirPath);
+        const images = files
+          .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
+          .map(file => `/${folder}/${file}`);
+        allImages = [...allImages, ...images];
+      }
     }
 
-    const files = fs.readdirSync(uploadDir);
-    const images = files
-      .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
-      .map(file => `/uploads/${file}`);
-
-    return NextResponse.json({ images });
+    return NextResponse.json({ images: allImages });
   } catch (error) {
     console.error("Fetch error:", error);
     return NextResponse.json({ images: [] });
