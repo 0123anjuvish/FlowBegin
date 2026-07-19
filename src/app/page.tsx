@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BookOpen, GraduationCap, Heart, Users } from "lucide-react";
+import { BookOpen, Briefcase, Leaf, Trophy, Sparkles } from "lucide-react";
+import Carousel from "../components/carousel/Carousel";
 
 export default function Home() {
   return (
@@ -25,58 +26,69 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section" style={{ paddingTop: "0" }}>
+        <div className="container">
+          <Carousel />
+        </div>
+      </section>
+
       <section className="section" style={{ backgroundColor: "var(--surface)" }}>
         <div className="container">
           <div className="section-title">
             <h2>Our Focus Areas</h2>
             <p style={{ color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto" }}>
-              We believe in a holistic approach to child development, focusing on education,
-              health, and essential life skills.
+              We focus on key impact areas designed to uplift children, youth, and communities through education, environment, and empowerment.
             </p>
           </div>
 
-          <div className="grid-2">
+          <div className="grid-3">
             <div className="card">
               <div className="card-icon">
                 <BookOpen size={24} />
               </div>
-              <h3>Quality Education</h3>
+              <h3>Education</h3>
               <p style={{ color: "var(--text-muted)" }}>
-                Providing access to basic and advanced education through sponsored schooling
-                and community learning centers.
+                Providing basic and advanced learning materials, remedial tutoring, and digital literacy tools to underprivileged children.
               </p>
             </div>
             
             <div className="card">
               <div className="card-icon">
-                <GraduationCap size={24} />
+                <Briefcase size={24} />
               </div>
-              <h3>Skill Development</h3>
+              <h3>Placement</h3>
               <p style={{ color: "var(--text-muted)" }}>
-                Equipping older children with vocational and technical skills to prepare
-                them for a self-sustaining future.
+                Equipping young adults with technical skills, career training, and connecting them to stable job placements.
               </p>
             </div>
 
             <div className="card">
               <div className="card-icon">
-                <Heart size={24} />
+                <Leaf size={24} />
               </div>
-              <h3>Health & Nutrition</h3>
+              <h3>Environment</h3>
               <p style={{ color: "var(--text-muted)" }}>
-                Ensuring proper physical development through regular health checkups and
-                nutritious meal programs.
+                Leading community tree plantation drives, waste management education, and sustainability initiatives.
               </p>
             </div>
 
             <div className="card">
               <div className="card-icon">
-                <Users size={24} />
+                <Trophy size={24} />
               </div>
-              <h3>Community Support</h3>
+              <h3>Sports Support</h3>
               <p style={{ color: "var(--text-muted)" }}>
-                Working with families and local communities to create a safe, supportive
-                environment for children to grow.
+                Fostering physical fitness, discipline, and team spirit through training, coaching, and athletic gear support.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="card-icon">
+                <Sparkles size={24} />
+              </div>
+              <h3>Women Empowerment</h3>
+              <p style={{ color: "var(--text-muted)" }}>
+                Delivering skill development workshops, self-defense classes, and financial literacy to foster independence.
               </p>
             </div>
           </div>

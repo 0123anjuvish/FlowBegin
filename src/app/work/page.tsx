@@ -1,64 +1,83 @@
-export default function Work() {
-  const projects = [
+import fs from "fs";
+import path from "path";
+import WorkClient from "./WorkClient";
+
+export const dynamic = "force-dynamic";
+
+export default function WorkPage() {
+  const workDir = path.join(process.cwd(), "public", "work");
+  let fileNames: string[] = [];
+
+  try {
+    if (fs.existsSync(workDir)) {
+      fileNames = fs.readdirSync(workDir);
+    }
+  } catch (error) {
+    console.error("Error reading public/work directory:", error);
+  }
+
+  // Filter only image files
+  const imageExtensions = [".jpg", ".jpeg", ".png", ".webp", ".svg", ".gif"];
+  const allImages = fileNames.filter((file) => {
+    const ext = path.extname(file).toLowerCase();
+    return imageExtensions.includes(ext);
+  });
+
+  const categories = [
     {
-      title: "Project Vidyalaya",
-      description: "Establishing makeshift classrooms in remote slums and villages. We provide learning materials, trained educators, and a safe learning environment for over 500 children.",
+      title: "Education",
+      description: "Providing quality education and learning materials to underprivileged children to ensure they have a strong foundation for their future. Our programs cover primary education, remedial classes, and digital literacy.",
       status: "Active",
       impact: "500+ Children Enrolled",
+      prefixes: ["education"]
     },
     {
-      title: "Tech For Tomorrow",
-      description: "A digital literacy program aimed at older children (12-16 years). We set up computer labs and teach basic programming, digital tools, and internet safety.",
+      title: "Placement",
+      description: "Equipping young adults with vocational skills and connecting them with employment opportunities to build sustainable careers. This includes industrial visits, resume building, and job interview preparation.",
       status: "Active",
-      impact: "120+ Students Certified",
+      impact: "200+ Placements Secured",
+      prefixes: ["placement", "industrial"]
     },
     {
-      title: "Nourish to Flourish",
-      description: "A mid-day meal initiative that ensures every child attending our learning centers receives at least one wholesome, nutritious meal a day to combat malnutrition.",
+      title: "Environment",
+      description: "Driving community-led environmental initiatives like tree planting, waste management, and environmental awareness campaigns to create a cleaner, greener tomorrow.",
       status: "Active",
-      impact: "1,000+ Meals/Week",
+      impact: "10,000+ Trees Planted",
+      prefixes: ["environment"]
     },
     {
-      title: "Art & Craft Workshops",
-      description: "Skill development focusing on creative expression. These workshops help children discover their talents and provide therapeutic outlets for stress.",
-      status: "Completed",
-      impact: "50+ Workshops Held",
+      title: "Sports Support",
+      description: "Encouraging physical fitness, teamwork, and discipline through organized sports programs, professional coaching, and providing necessary athletic gear to promising young talents.",
+      status: "Active",
+      impact: "50+ Sports Events",
+      prefixes: ["sports"]
+    },
+    {
+      title: "Women Empowerment",
+      description: "Empowering women through skill development, financial literacy, vocational training, and self-defense programs to foster independence and self-reliance.",
+      status: "Active",
+      impact: "1,000+ Women Supported",
+      prefixes: ["women"]
     }
   ];
 
-  return (
-    <div className="container section">
-      <div className="section-title">
-        <h1>Our Work</h1>
-        <p style={{ color: "var(--text-muted)", maxWidth: "700px", margin: "0 auto", fontSize: "1.1rem" }}>
-          Explore the initiatives and projects we've undertaken to bring about sustainable
-          change in the lives of underprivileged children.
-        </p>
-      </div>
+  // Group images into projects based on filename prefix
+  const projects = categories.map((cat) => {
+    const catImages = allImages
+      .filter((img) => {
+        const lowerName = img.toLowerCase();
+        return cat.prefixes.some((prefix) => lowerName.startsWith(prefix.toLowerCase()));
+      })
+      .map((img) => `/work/${img}`);
 
-      <div className="grid-2">
-        {projects.map((project, index) => (
-          <div key={index} className="card" style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
-              <h3 style={{ margin: 0, color: "var(--primary)" }}>{project.title}</h3>
-              <span style={{ 
-                fontSize: "0.8rem", 
-                padding: "0.25rem 0.75rem", 
-                borderRadius: "20px", 
-                backgroundColor: project.status === 'Active' ? "rgba(59, 130, 246, 0.1)" : "rgba(120, 113, 108, 0.1)",
-                color: project.status === 'Active' ? "var(--secondary)" : "var(--text-muted)",
-                fontWeight: 600
-              }}>
-                {project.status}
-              </span>
-            </div>
-            <p style={{ color: "var(--text-muted)", flexGrow: 1 }}>{project.description}</p>
-            <div style={{ marginTop: "1.5rem", paddingTop: "1rem", borderTop: "1px solid var(--border)", fontWeight: 600 }}>
-              Impact: {project.impact}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+    return {
+      title: cat.title,
+      description: cat.description,
+      status: cat.status,
+      impact: cat.impact,
+      images: catImages.length > 0 ? catImages : ["/placeholder.jpg"]
+    };
+  });
+
+  return <WorkClient initialProjects={projects} />;
 }

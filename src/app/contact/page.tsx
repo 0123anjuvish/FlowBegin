@@ -61,8 +61,7 @@ export default function Contact() {
               <div>
                 <h3 style={{ marginBottom: "0.5rem" }}>Email Us</h3>
                 <p style={{ color: "var(--text-muted)", margin: 0 }}>
-                  hello@flowbegin.org<br />
-                  volunteer@flowbegin.org
+                  Flowbegin.foundation@gmail.com
                 </p>
               </div>
             </div>
