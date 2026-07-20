@@ -21,10 +21,16 @@ export default function Navigation() {
     <header className="header">
       <div className="container nav-container">
         <Link href="/" className="logo">
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <HeartHandshake size={28} />
-            Flowbegin
-          </span>
+          <img 
+            src="/logo.png" 
+            alt="Flowbegin Logo" 
+            style={{ 
+              height: "100px", 
+              width: "auto", 
+              objectFit: "contain",
+              display: "block"
+            }} 
+          />
         </Link>
         
         <button 
